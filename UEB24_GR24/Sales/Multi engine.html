@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aerosales</title>
+    <link rel="stylesheet" href="../css/sales.css">
+    <link rel="stylesheet" href="../footer/footer.css">
+    <link rel="stylesheet" href="../css/nav_footer.css">
+    <link rel="stylesheet" href="../member/popup.css">
+
+    <script src="../js/jquery-3.7.1.min.js"></script>
+</head>
+
+<body>
+    <nav style=" background: rgb(27, 27, 27);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);">
+       <div class="logo">
+        <a href="../index.html">
+            <img src="../img/logo and icons/Untitled 2.svg" alt="Site logo " style="width: 15rem;">
+        </a>
+    </div>
+    <div class="navigation">
+        <a href="../index.html" class="nav-text">Home</a>
+        <a href="../about.html" class="nav-text">About</a>
+        <a href="../recources.html" class="nav-text">Resources</a>
+        <a href="../staff.html" class="nav-text">Staff</a>
+        <a href="../contact.html" class="nav-text">Contact</a>
+        <a href="#log-in" id="log-inOrsign-up" class="nav-text">Log in/Sign up</a>
+  
+      </div>
+    </nav>
+
+    <div id="popup">
+
+    </div>
+
+
+    <section class="jet-desc premium" style="margin-top: 6rem;">
+        <div class="titull" id="beechcraft58">
+            <h1>N98765 - 1974 BEECHCRAFT 58</h1>
+        </div>
+        <div class="jet-desc-image">
+            <div class="bottomimages">
+                <img src="../img/plane-images/beechcraft 58/beechcraft1.webp" alt="BEECHCRAFT 58" onclick="changeImage(this)">
+                <img src="../img/plane-images/beechcraft 58/beechcraft2.webp" alt="BEECHCRAFT 58" onclick="changeImage(this)">
+                <img src="../img/plane-images/beechcraft 58/beechcraft3.jpg" alt="BEECHCRAFT 58" onclick="changeImage(this)">
+                <img src="../img/plane-images/beechcraft 58/beechcraft4.webp" alt="BEECHCRAFT 58" onclick="changeImage(this)">
+            </div>
+            <div class="topimage">
+                <img class="mainImage" src="../img/plane-images/beechcraft 58/beechcraft.webp" alt="BEECHCRAFT 58">
+            </div>
+        </div>
+    
+        <div class="data">
+    
+            <h2>Key Features:</h2>
+    
+            <ul>
+                <li><strong>Year:</strong> 1974.</li>
+                <li><strong>Manufacturer:</strong> Beechcraft.</li>
+                <li><strong>Condition:</strong> Used.</li>
+                <li><strong>Total Time:</strong> 3,200 hours.</li>
+                <li><strong>Engine Maintenance Program:</strong> Twin Continental IO-520 engines with recent overhauls.</li>
+                <li><strong>Exterior Notes:</strong> Blue and white paint scheme with silver accents.</li>
+                <li><strong>Avionics/Radios:</strong> Garmin G500 avionics suite with autopilot and weather radar.</li>
+                <li><strong>Safety:</strong> Equipped with dual alternators, advanced weather radar, and Garmin traffic systems for optimal safety.
+                    <button class="openModalBtn" data-modal="moreInfoModal"><u>More Info...</u></button>
+                </li>
+            </ul>
+    
+            <div id="moreInfoModal" class="modal">
+                <div class="modal-content">
+                    <span class="close"></span>
+                    <h1>More Information</h1>
+                    <br>
+                    <p><strong>Performance:</strong> 
+                        - Maximum Cruise Speed: 200 knots <br>
+                        - Maximum Range: 1,000 nautical miles <br>
+                        - Service Ceiling: 20,000 feet
+                    </p>
+                    <p><strong>Interior Features:</strong> 
+                        - Seating for up to 6 passengers <br>
+                        - Refurbished leather interior with club seating arrangement <br>
+                        - Fold-out work tables for convenience <br>
+                        - Dual USB ports and charging stations
+                    </p>
+                    <p><strong>Exterior Details:</strong> 
+                        - Blue and white paint scheme with silver accents <br>
+                        - LED landing and taxi lights <br>
+                        - Custom Beechcraft branding on tail and wingtips
+                    </p>
+                    <p><strong>Safety and Reliability:</strong> 
+                        - Redundant electrical and fuel systems <br>
+                        - Advanced autopilot for enhanced operational safety <br>
+                        - Garmin weather radar for situational awareness
+                    </p>
+                    <p><strong>Maintenance Highlights:</strong> 
+                        - Full maintenance logs available <br>
+                        - Engines and propellers recently overhauled <br>
+                        - Always hangared to maintain pristine condition
+                    </p>
+                    <p><strong>Special Features:</strong> 
+                        - High-performance twin-engine design <br>
+                        - Ample luggage storage with accessible in-flight compartments <br>
+                        - Ideal for both business and personal travel
+                    </p>
+                    <p id="modalDetails"></p>
+                </div>
+            </div>
+    
+            <div class="more-info">
+                <button class="button1 height" class="open-form">View Height</button>
+                <button class="button1 forma" data-type="Multi-Engine" data-name="Beechcraft 58" class="open-form">Buy / Rent</button>
+            </div>
+        </div>
+    </section>
+    
+    
+
+<!--------------------------------------------------------------------------------------------------------------------------->
+
+    
+    <div id="footer"></div>
+
+    <script type="text/javascript">
+        $('#footer').load('../footer/footer.html');
+    </script>
+    <style>
+        footer {
+            background-color: rgb(27, 27, 27);
+        }
+
+        .footer-div {
+            background-color: rgb(27, 27, 27);
+        }
+    </style>
+    <script type="text/javascript">
+        $('#popup').load('../member/popup.html');
+    </script>
+
+
+
+    <script type="text/javascript" src="../js/nav_footer.js"></script>
+    <script type="text/javascript" src="../js/popup.js"></script>
+    <script src="../js/Sales.js"></script>
+    <script>
+        document.querySelectorAll(".forma").forEach(button => {
+            button.addEventListener("click", () => {
+                const selectedType = button.getAttribute("data-type");
+                const selectedName = button.getAttribute("data-name");
+
+                // Ruaj te dhenat ne localStorage
+                localStorage.setItem("selectedType", selectedType);
+                localStorage.setItem("selectedName", selectedName);
+
+                // Shko te site
+                window.location.href = "../buy-rent/buy-rent.html"; 
+            });
+        });
+        document.querySelectorAll(".height").forEach(button => {
+            button.addEventListener("click", () => {
+                
+                // Redirect to the form page
+                window.location.href = "../height.html";  
+            });
+        });
+    </script>
+
+
+</body>
+
+</html>

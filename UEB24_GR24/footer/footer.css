@@ -1,0 +1,79 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+footer{
+    background-color: #183251;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-div {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #183251;
+   height: 100px;
+   width: 80%;
+
+}
+
+.f-linqet,
+.f-logot {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    a{
+        text-decoration: none;
+    }
+}
+
+.f-linqet a {
+
+    color: #F1F0E8;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.fa-brands {
+    font-size: 25px;
+    color: #F1F0E8;
+}
+
+
+.f-link:hover {
+    color: #597F97;
+}
+.f-logo {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
+}
+
+.f-logo:hover {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+}
+
+.facebook:hover {
+    background-color: #3b5998;
+}
+
+.instagram:hover {
+    background-color: #e1306c;
+}
+
+.X:hover {
+    background-color: #000000;
+}
+
+.you-tube:hover {
+    background-color: #ff0000;
+}

@@ -1,0 +1,411 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  
+  font-family: 'Segoe UI';
+  letter-spacing: 1px;
+  font-size: 18px;
+  width: 100%;
+  height: 100%; /* Ensure the body covers the entire viewport height */
+  
+  /* Stacked Background Images */
+  background-image: 
+  url('../img/formation/bg.avif'),  
+  url('../img/formation/bg1.avif'),  
+  url('../img/formation/bg2.avif'),  
+  url('../img/formation/bg3.avif'),
+  url('../img/formation/bg4.avif'),
+  url('../img/formation/bg.avif'),  
+  url('../img/formation/bg1.avif');
+
+  
+  background-position: 
+    0% 0%,        
+    0% 100vh,    
+    0% 200vh, 
+    0% 300vh,   
+    0% 400vh,      
+    0% 500vh,        
+    0% 600vh;      
+
+  background-size: 
+    100% 100vh,     
+    100% 100vh,     
+    100% 100vh,
+    100% 100vh,
+    100% 100vh,
+    100% 100vh,
+    100% 100vh;
+
+  background-repeat: 
+    no-repeat, 
+    no-repeat, 
+    no-repeat, 
+    no-repeat, 
+    no-repeat, 
+    no-repeat, 
+    no-repeat;
+    position: relative;
+}
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  
+  z-index: -1;
+  backdrop-filter: blur(1px);
+  background-image: none;
+  background-size: cover;
+ 
+}
+
+.Airports-space{
+  margin-top: 6rem;
+}
+
+.flight-status, 
+.financing-leasing, 
+.maintenance-support, 
+.guide-section, 
+.ownership-section, 
+.resource-section {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(64, 92, 110, 0.91);
+}
+
+h1, h2 {
+  text-align: center;
+}
+
+p{
+  padding-left: 15px;
+}
+
+ul {
+  padding-left: 50px;
+}
+
+.content-wrapper{
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(64, 92, 110, 0.91);
+}
+
+.text.container1 {
+  width: 50%;
+  height: 100px;
+  color: #333;
+  border: 1px solid #070707;
+  text-align: left;
+}
+
+.text.container1 hr {
+  display: inline-block;
+  width: 100%;
+  height: 2px;
+  background-color: #333;
+  border: none;
+  margin: 0;
+}
+
+.content-wrapper {
+  padding-left: 35px;
+  padding-right: 35px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 20px;
+  align-items: flex-start;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+}
+
+.slideshow-wrapper {
+  width: 400px;
+  height: 320px;
+  border-radius: 15%;
+  position: relative;
+  align-self: center;
+}
+
+.slideshow-right {
+  width: 100%;
+  position: relative;
+  gap: 20px;
+  justify-content: flex-end;
+  border-radius: 15px;
+}
+
+.slideshow-image {
+  width: 100%;
+  max-width: 400px;
+  height: 320px;
+  object-fit: cover;
+  position: absolute;
+  border-radius: 15px;
+  display: none;/* Hide all images initially */
+  opacity: 0;
+  
+}
+
+
+
+.slideshow-image.active {
+display: block; 
+opacity: 1; 
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table th, table td {
+  text-align: left;
+  padding: 12px 15px;
+}
+
+table th {
+  background: rgba(64, 92, 110, 0.91);
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+table tr:nth-child(even) {
+  background: #f9f9f9;
+}
+
+table tr:hover {
+  background: #f1f1f1;
+}
+
+table td {
+  border-bottom: 1px solid #ddd;
+}
+
+.on-time {
+  color: green;
+  font-weight: bold;
+}
+
+.delayed {
+  color: orange;
+  font-weight: bold;
+}
+
+.cancelled {
+  color: red;
+  font-weight: bold;
+}
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.tab-button {
+  flex: 1;
+  padding: 10px 20px;
+  border: none;
+  background: rgba(64, 92, 110, 0.91);
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  text-transform: uppercase;
+  transition: background 0.3s;
+}
+
+.tab-button:hover, 
+.tab-button.active {
+  background: rgba(64, 92, 110, 0.91);
+  font-weight: bold;
+}
+
+.tab-content {
+  display: none;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+.tab-content h2 {
+  color: rgba(64, 92, 110, 0.91);
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.tab-content p, .tab-content ul {
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 10px 0;
+}
+
+.tab-content ul {
+  list-style: disc;
+  margin-left: 20px;
+}
+
+.tab-content li {
+  margin-bottom: 8px;
+}
+
+.tab-content a {
+  color: rgba(64, 92, 110, 0.91);
+  text-decoration: none;
+}
+
+.tab-content a:hover {
+  text-decoration: underline;
+}
+
+.accordion {
+  width: 100%;
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+.accordion-item {
+  background-color: #fff;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.accordion-header {
+  width: 100%;
+  padding: 15px;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: rgba(89, 127, 151, 0.91);
+  color: white;
+  text-align: left;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.3s;
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+  background: #f9f9f9;
+  padding: 0 20px;
+}
+
+.accordion-content p,
+.accordion-content ul {
+  margin: 15px 0;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.accordion-content ul {
+  list-style: disc;
+  margin-left: 20px;
+}
+
+.accordion-content li {
+  margin-bottom: 8px;
+}
+
+.resource-section {
+  background: #f8f9fc;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.resource-tab-buttons {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.resource-tab-button {
+  background: rgba(64, 92, 110, 0.91);
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin: 0 5px;
+  transition: background 0.3s ease;
+}
+
+.resource-tab-button:hover, 
+.resource-tab-button.active {
+  background: rgba(64, 92, 110, 0.91);
+  font-weight: bold;
+}
+
+.resource-tab-content {
+  display: none;
+  text-align: left;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.resource-tab-content.active {
+  display: block;
+}
+
+.intro-text {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+.resource-list {
+  list-style: none;
+  padding: 0;
+}
+
+.resource-list li {
+  margin: 10px 0;
+  font-size: 1rem;
+}
+
+.resource-list li strong {
+  color: rgba(64, 92, 110, 0.91);
+}
+
+.resource-list a {
+  color: rgba(64, 92, 110, 0.91);
+  text-decoration: none;
+}
+
+.resource-list a:hover {
+  text-decoration: underline;
+}
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}

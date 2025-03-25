@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aerosales</title>
+    <link rel="stylesheet" href="../css/sales.css">
+    <link rel="stylesheet" href="../footer/footer.css">
+    <link rel="stylesheet" href="../css/nav_footer.css">
+    <link rel="stylesheet" href="../member/popup.css">
+
+    <script src="../js/jquery-3.7.1.min.js"></script>
+</head>
+
+<body>
+    <nav style=" background: rgb(27, 27, 27);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);">
+        <div class="logo">
+            <a href="../index.html">
+                <img src="../img/logo and icons/Untitled 2.svg" alt="Site logo " style="width: 15rem;">
+            </a>
+        </div>
+        <div class="navigation">
+            <a href="../index.html" class="nav-text">Home</a>
+            <a href="../about.html" class="nav-text">About</a>
+            <a href="../recources.html" class="nav-text">Resources</a>
+            <a href="../staff.html" class="nav-text">Staff</a>
+            <a href="../contact.html" class="nav-text">Contact</a>
+            <a href="#log-in" id="log-inOrsign-up" class="nav-text">Log in/Sign up</a>
+      
+          </div>
+    </nav>
+
+    <div id="popup">
+
+    </div>
+
+
+    <section class="jet-desc premium" style="margin-top: 6rem;">
+        <div class="titull" id="learjet">
+            <h1 >XA-RSC - 2015 LEARJET 75</h1>
+        </div>
+        <div class="jet-desc-image">
+            <div class="bottomimages">
+                <img src="../img/plane-images/Learjet 75/learjet 1.webp" alt="LEARJET" onclick="changeImage(this)">
+                <img src="../img/plane-images/Learjet 75/learjet2.webp" alt="LEARJET" onclick="changeImage(this)">
+                <img src="../img/plane-images/Learjet 75/learjet3.webp" alt="LEARJET" onclick="changeImage(this)">
+                <img src="../img/plane-images/Learjet 75/learjet4.webp" alt="LEARJET" onclick="changeImage(this)">
+
+            </div>
+            <div class="topimage">
+                <img class="mainImage" src="../img/plane-images/Learjet 75/2015 LEARJET 75.webp" alt="LEARJET">
+            </div>
+
+        </div>
+
+        <div class="data">
+
+            <h2>Key Features:</h2>
+        
+            <ul>
+                <li><strong>Year:</strong> 2000.</li>
+                <li><strong>Manufacturer:</strong> Gulfstream.</li>
+                <li><strong>Condition:</strong> Used.</li>
+                <li><strong>Total Time:</strong> 8,750 hours.</li>
+                <li><strong>Engine Maintenance Program:</strong> Rolls-Royce Corporate Care.</li>
+                <li><strong>Exterior Notes:</strong> Overall Matterhorn white with silver and gray accent stripes.</li>
+                <li><strong>Avionics/Radios:</strong> Honeywell SPZ-8500 Avionics Suite.</li>
+                <li><strong>Safety:</strong> Equipped with advanced avionics, TCAS II, and Enhanced Ground Proximity Warning Systems (EGPWS) for maximum safety.
+                    <button class="openModalBtn"data-modal="moreInfoModal"><u>More Info...</u></button>
+                </li>
+            </ul>
+        
+            <div id="moreInfoModal" class="modal">
+             
+                <div class="modal-content">
+                    <span class="close"></span>
+                    <h1>More Information</h1>
+                    <br>
+                    <p><strong>Performance:</strong> 
+                        - Maximum Cruise Speed: 500 knots <br>
+                        - Maximum Range: 6,500 nautical miles <br>
+                        - Maximum Altitude: 51,000 feet
+                    </p>
+                    <p><strong>Interior Features:</strong> 
+                        - Luxurious seating for up to 14 passengers <br>
+                        - Fully equipped forward and aft lavatories <br>
+                        - Advanced entertainment system with satellite TV and individual screens <br>
+                        - Fully reclining seats that convert into beds for long-haul comfort <br>
+                        - High-speed Wi-Fi and satellite phone connectivity
+                    </p>
+                    <p><strong>Exterior Details:</strong> 
+                        - Matterhorn white with silver and gray accents <br>
+                        - LED lighting and polished brightwork <br>
+                        - High-gloss paint finish for an elegant appearance
+                    </p>
+                    <p><strong>Safety and Reliability:</strong> 
+                        - Equipped with TCAS II and EGPWS for enhanced situational awareness <br>
+                        - Redundant flight systems for operational safety <br>
+                        - Advanced autopilot and weather radar systems
+                    </p>
+                    <p><strong>Maintenance Highlights:</strong> 
+                        - Complete and up-to-date maintenance logs <br>
+                        - Recently overhauled engines under Rolls-Royce Corporate Care <br>
+                        - Always hangared, ensuring excellent condition
+                    </p>
+                    <p><strong>Special Features:</strong> 
+                        - Fully equipped galley with microwave and coffee maker <br>
+                        - Noise-compliant design for quiet cabin operation <br>
+                        - Extended baggage space with in-flight access
+                    </p>
+                    <p id="modalDetails"></p>
+                </div>
+            </div>
+        
+            <div class="more-info">
+                <button class="button1 height" class="open-form">View Height</button>
+                <button class="button1 forma" data-type="Jet" data-name="Learjet 75" class="open-form">Buy / Rent</button>
+            </div>
+        </div>
+        
+    </section>
+
+<!--------------------------------------------------------------------------------------------------------------------------->
+
+    <section class="jet-desc premium" style="margin-top: 6rem;">
+        <div class="titull" id="gulfstream">
+            <h1 >2000 GULFSTREAM GV</h1>
+        </div>
+        <div class="jet-desc-image ">
+            <div class="bottomimages">
+                <img src="../img/plane-images/gulfstream gv/gulfstream1.webp" alt="LEARJET" onclick="changeImage(this)">
+                <img src="../img/plane-images/gulfstream gv/gulfstream2.webp" alt="LEARJET" onclick="changeImage(this)">
+                <img src="../img/plane-images/gulfstream gv/gulfstream3.webp" alt="LEARJET" onclick="changeImage(this)">
+                <img src="../img/plane-images/gulfstream gv/gulfstream4.jpg" alt="LEARJET" onclick="changeImage(this)">
+
+            </div>
+            <div class="topimage">
+                <img class="mainImage" src="../img/plane-images/gulfstream gv/N1120G - 2000 GULFSTREAM GV.webp" alt="gulfstream">
+            </div>
+
+        </div>
+
+        <div class="data">
+
+            <h2>Key Features:</h2>
+
+            <ul>
+                <li><strong>Year:</strong>2015.</li>
+                <li><strong>Manufacturer:</strong> LEARJET.</li>
+                <li><strong>Condition:</strong> Used.</li>
+                <li><strong>Total Time:</strong> 1550 hours.</li>
+                <li><strong>Engine Maintenance Program:</strong> MSP Gold.</li>
+                <li><strong>Exterior Notes:</strong> Matterhorn white w/silver, gray, orange & blue.</li>
+                <li><strong>Avionics/Radios:</strong> Garmin G5000 Avionics System.</li>
+                <li><strong>Safety:</strong> Equipped with state-of-the-art avionics and safety systems, ensuring the
+                    highest standards of flight safety.
+                    <button class="openModalBtn"  data-modal="moreInfoModal"><u>More Info...</u></button>
+                </li>
+            </ul>
+
+            <div id="moreInfoModal" class="modal">
+                <div class="modal-content">
+                    <span class="close"></span>
+                    <h1>More Information</h1>
+                    <br>
+                    <p><strong>Performance:</strong> 
+                        - Maximum Cruise Speed: 500 knots <br>
+                        - Maximum Range: 6,500 nautical miles <br>
+                        - Maximum Altitude: 51,000 feet <br>
+                        - Takeoff Distance: 5,250 feet <br>
+                        - Landing Distance: 3,100 feet
+                    </p>
+                    <p><strong>Interior Features:</strong> 
+                        - Spacious cabin with three distinct zones <br>
+                        - Seating for up to 14 passengers with a conference area <br>
+                        - Fully reclining seats and divan convertible to beds <br>
+                        - State-of-the-art entertainment system with satellite TV and DVD <br>
+                        - Dual forward and aft lavatories <br>
+                        - Fully equipped galley with oven, microwave, coffee maker, and ample storage
+                    </p>
+                    <p><strong>Exterior Details:</strong> 
+                        - Matterhorn white with silver and gray accents <br>
+                        - LED exterior lighting for better visibility <br>
+                        - High-gloss paint finish, well-maintained to preserve aesthetics <br>
+                        - Polished brightwork and enhanced aerodynamic design
+                    </p>
+                    <p><strong>Avionics:</strong> 
+                        - Honeywell SPZ-8500 Integrated Avionics Suite <br>
+                        - Dual Flight Management Systems (FMS) <br>
+                        - Enhanced Vision System (EVS) and Synthetic Vision System (SVS) <br>
+                        - TCAS II, EGPWS, and ADS-B Out compliance <br>
+                        - Dual autopilot for redundancy and safety
+                    </p>
+                   
+                    <p><strong>Special Features:</strong> 
+                        - Quiet cabin design with advanced soundproofing <br>
+                        - In-flight accessible baggage compartment <br>
+                        - Noise-compliant engines for urban airport operations <br>
+                        - High-speed internet and satellite communication capabilities
+                    </p>
+                    <p id="modalDetails"></p>
+                </div>
+            </div>
+            
+            <div class="more-info">
+                <button class="button1 height" class="open-form">View Height</button>
+                <button class="button1 forma" data-type="Jet" data-name="Gulfstream GV" class="open-form">Buy / Rent</button>
+            </div>
+        </div>
+    </section>
+    
+    <div id="footer"></div>
+
+    <script type="text/javascript">
+        $('#footer').load('../footer/footer.html');
+    </script>
+    <style>
+        footer {
+            background-color: rgb(27, 27, 27);
+        }
+
+        .footer-div {
+            background-color: rgb(27, 27, 27);
+        }
+    </style>
+    <script type="text/javascript">
+        $('#popup').load('../member/popup.html');
+    </script>
+
+
+
+    <script type="text/javascript" src="../js/nav_footer.js"></script>
+    <script type="text/javascript" src="../js/popup.js"></script>
+    <script src="../js/Sales.js"></script>
+    <script>
+        document.querySelectorAll(".forma").forEach(button => {
+            button.addEventListener("click", () => {
+                const selectedType = button.getAttribute("data-type");
+                const selectedName = button.getAttribute("data-name");
+
+                // Ruaj te dhenat ne localStorage
+                localStorage.setItem("selectedType", selectedType);
+                localStorage.setItem("selectedName", selectedName);
+
+                // Shko te site
+                window.location.href = "../buy-rent/buy-rent.html"; 
+            });
+        });
+        document.querySelectorAll(".height").forEach(button => {
+            button.addEventListener("click", () => {
+                
+                // Redirect to the form page
+                window.location.href = "../height.html";  
+            });
+        });
+    </script>
+
+
+</body>
+
+</html>

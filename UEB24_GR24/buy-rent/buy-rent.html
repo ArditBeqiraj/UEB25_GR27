@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="buy-rent.css">
+</head>
+
+<body>
+    <div class="banner">
+        <h2>Own the Sky</h2>
+    </div>
+    <div class="banner third">
+
+    </div>
+    <div class="banner second">
+        <h2>Your Aircraft Awaits</h2>
+    </div>
+    <div class="form-wrapper">
+        <div class="form-box">
+            <form action="" method="get">
+                <div class="form-field">
+                    <label for="name" class="form-label">Full Name</label>
+                    <input type="text" name="name" id="name" placeholder="Full Name" class="form-input">
+                </div>
+                <div class="form-field">
+                    <label for="phone" class="form-label">Phone Number</label>
+                    <input type="text" name="phone" id="phone" placeholder="Enter your phone number" class="form-input">
+                </div>
+                <div class="form-field">
+                    <label for="email" class="form-label">Email Address</label>
+                    <input type="email" name="email" id="email" placeholder="Enter your email" class="form-input">
+                </div>
+                <div class="form-field">
+                    <label for="date" class="form-label">Date</label>
+                    <input type="date" name="date" id="date" class="form-input">
+                </div>
+                <div class="form-field">
+                    <label class="form-label">Address Details</label>
+                    <div class="address">
+                        <input type="text" name="area" id="area" placeholder="Enter area" class="form-input">
+                        <input type="text" name="city" id="city" placeholder="Enter city" class="form-input">
+                        <input type="text" name="state" id="state" placeholder="Enter state" class="form-input">
+                        <input type="text" name="post-code" id="post-code" placeholder="Post Code" class="form-input">
+                    </div>
+                </div>
+                <div class="form-field" style="display: grid;grid-template-columns: 1fr 1fr;gap: 1rem;">
+                    <label class="form-label" for="type">Plane Type:</label>
+                    <label class="form-label" for="plane-name">Plane Name:</label>
+                    <select class="form-input" id="type" name="type">
+                        <option value="" disabled selected>Select a type</option>
+                    </select>
+                    <select class="form-input" id="plane-name" name="plane-name">
+                        <option value="" disabled selected>Select a name</option>
+                    </select>
+                </div>
+                <div>
+                    <button class="form-btn" >Book Appointment</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="../js/buy-rent.js"></script>
+
+</body>
+
+</html>

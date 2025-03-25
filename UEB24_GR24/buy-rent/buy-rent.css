@@ -1,0 +1,142 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;}
+
+body {
+    font-family: 'Segoe UI';
+    
+    font-size: 18px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, #2c2c2c 70%);
+
+    display: flex;
+    gap: 5rem;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+}
+
+.form-wrapper {
+    z-index: 100;
+    position:absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 48px;
+    width: 750px;
+    
+}
+
+.form-box {
+    background: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 650px;
+    width: 100%;
+    scale: 0.90;
+}
+
+.form-field {
+    margin-bottom: 20px;
+}
+
+.address{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+
+
+.form-label {
+    display: block;
+    font-size: 16px;
+    font-weight: 500;
+    color: #07074d;
+    margin-bottom: 12px;
+}
+
+.form-input {
+    width: 100%;
+    padding: 12px 24px;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    font-size: 16px;
+    color: #6b7280;
+    background: #fff;
+    outline: none;
+}
+
+.form-input:focus {
+    border-color: #6a64f1;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+}
+
+.form-btn {
+    width: 100%;
+    padding: 14px 32px;
+    background-color: #6a64f1;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.form-btn:hover {
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+    background-color: #5a54d1;
+}
+
+
+
+.banner {
+    
+    max-width: 370px;
+    max-height:720px;
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/plane-is-flying-blue-sky.jpg');
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    color: rgba(255, 255, 255, 0.656) ; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.9);
+    
+}
+.second{
+    background-image: url('../img/samuel-arkwright-CulnU78H-5k-unsplash.jpg');
+    
+}
+.third{
+    background-image: url('../img/steve-harvey-hFMAMZx2K2s-unsplash.jpg');
+    
+}
+
+.banner::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.45);
+  
+    z-index: 1;
+}
+.banner h2{
+    z-index: 2;
+    margin-bottom: 1rem;
+    text-transform:capitalize;
+}
+

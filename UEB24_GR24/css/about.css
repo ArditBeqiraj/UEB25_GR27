@@ -1,0 +1,266 @@
+
+*{
+    font-family: 'Segoe UI';
+    letter-spacing: 1px;
+}
+
+
+.body-special {
+    overflow: hidden;
+}
+
+header {
+    text-align: center;
+    background-size: cover;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px 50px;
+    color: #ffffff;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/UEB24_GR24/img/about/artak-petrosyan-RUBKuvuXdLU-unsplash.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+}
+
+@font-face {
+    font-family: 'font';
+    src: url(/font/Flight21.ttf);
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.showcase {
+    justify-content: center;
+    margin: 2rem auto;
+    gap: 1rem;
+}
+
+.imagecontainer {
+    padding: 1rem;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.imagecontainer img {
+    width: 40vh;
+    height: 27vh;
+    border-radius: 5px;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.jet-charter-luxury {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem;
+    background-color: #f9f9f9;
+}
+
+.image-container-luxury {
+    flex: 1;
+}
+
+.text-container-luxury {
+    flex: 1;
+    max-width: 600px;
+    color: #333;
+}
+
+.text-container-luxury h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+    font-family: font;
+}
+
+.text-container-luxury hr {
+    width: 50%;
+    border: 1px solid #ccc;
+    margin: 1rem 0;
+}
+
+.text-container-luxury p {
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+    color: #555;
+    word-wrap: break-word;
+}
+
+.text-container-luxury ul {
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
+}
+
+.text-container-luxury ul li {
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+}
+
+.text-container-luxury a {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.text-container-luxury a:hover {
+    background-color: #555;
+}
+
+.image-container-space {
+    flex: 1;
+    order: 2;
+}
+
+.image-container-space img, .image-container-luxury img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 10px solid transparent;
+    border-image: url(/UEB24_GR24/img/about/border-image.webp) 30 stretch;
+}
+
+.text-container-space {
+    flex: 1;
+    max-width: 600px;
+    color: #333;
+    order: 1;
+}
+
+.text-container-space h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+    font-family: font;
+}
+
+.text-container-space hr {
+    width: 50%;
+    border: 1px solid #ccc;
+    margin: 1rem 0;
+}
+
+.text-container-space p {
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+    color: #555;
+    word-wrap: break-word;
+}
+
+.text-container-space ul {
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
+}
+
+.text-container-space ul li {
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+}
+
+.text-container-space a {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.text-container-space a:hover {
+    background-color: #555;
+}
+
+.faq-container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+.faq-item {
+    background-color: #fff;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+#faq-question {
+    width: 100%;
+    padding: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: rgba(89, 127, 151, 0.91);
+    color: white;
+    text-align: left;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.3s;
+}
+
+#faq-question:hover {
+    background-color: rgba(64, 92, 110, 0.91);
+}
+
+.faq-answer {
+    display: none;
+    padding: 15px;
+    background-color: #f8fafc;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out;
+    font-size: 16px;
+    color: #333;
+    max-height: none;
+}
+.faq-answer.open {
+    display: block;
+}
+
+.faq-answer p {
+    margin: 0;
+}
+
+.faq-answer.open {
+    max-height: 200px;
+}
+
+.carbon {
+    background-image: url(/UEB24_GR24/img/about/mark-adrian-thomas-9QaIdm0B1Uc-unsplash.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 250px;
+    text-align: center;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-left: 15%;
+    padding-right: 15%;
+}

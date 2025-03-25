@@ -1,0 +1,215 @@
+
+*{
+     font-family: 'Segoe UI';
+        letter-spacing: 1px;
+}
+#popup1 {
+    background: radial-gradient(circle, transparent, #2a3d48);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    overflow: auto;
+}
+
+#popup-content {
+    width: 450px;
+    background: #fff;
+    background-origin: border-box;
+    border-radius: 8px;
+    position: relative;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    flex-direction: column;
+    height: 300px;
+    color: #333;
+}
+
+#popup-content h4 {
+    padding-top: 20px;
+    height: 55px;
+    margin-top: 0;
+    font-size: 1.5rem;
+    color: #333;
+    background-color: rgba(89, 127, 151, 0.5);
+}
+
+#popup-content p {
+    padding-top: 0;
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.close1 {
+    background-color: #597f97;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    position: absolute;
+    bottom: 20px;
+    transform: translateX(-50%);
+    right: 30%;
+    display: flex;
+    justify-content: center;
+}
+
+.close1:hover {
+    background-color: #4c6b7b;
+}
+
+#name {
+    position:fixed;
+    background-color: rgb(255, 255, 255);
+    width: fit-content;
+    height: fit-content;
+    opacity: 0;
+    border-radius: 2px;
+    border: 1.5px solid rgb(0, 0, 0);
+    font-size: 0.75rem;
+    margin-top: 50px;
+    margin-left: 10px;
+}
+
+#allsvg {
+    margin: 0;
+    padding: 0;
+}
+
+svg path {
+    cursor: pointer;
+}
+
+svg path:hover {
+    fill: #597f97;
+}
+
+.contact-form-section {
+    padding: 2rem;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 2rem auto 0 auto;
+    max-width: 800px;
+    border-radius: 8px;
+}
+
+.contact-form-section h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: #597f97;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+form label {
+    font-weight: bold;
+    color: #333;
+}
+
+#namee, #email, #message {
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    width: 100%;
+}
+
+form input:focus,
+form textarea:focus {
+    border-color: #597f97;
+    outline: none;
+    box-shadow: 0 0 5px rgba(89, 127, 151, 0.5);
+}
+
+.submit-button {
+    background-color: #597f97;
+    color: white;
+    padding: 0.8rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #46697d;
+}
+
+.contact-details-section {
+    text-align: center;
+    margin: 2rem auto;
+    max-width: 800px;
+    padding: 2rem;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.contact-details-section h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #597f97;
+}
+
+.contact-details-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.contact-details-section li {
+    margin: 1rem 0;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #333;
+}
+
+.contact-details-section li i {
+    font-size: 1.5rem;
+    color: #597f97;
+}
+
+footer {
+background-color: transparent;
+border-top:white solid 2px; 
+
+}
+.footer-div {
+    background-color: transparent;
+}
+
+nav {
+    border-bottom: solid white 2px;
+
+    position: relative;
+}
+
+body {
+    font-family: 'Cascadia Mono', sans-serif;
+    font-size: 18px;
+    line-height: 1.1;
+    background: linear-gradient(to bottom right, #597f97, #2a3d48);
+    min-height: 100vh;
+    background-attachment: fixed;
+    color: white;
+}
+
+html, body {
+    overflow-x: hidden;
+}
