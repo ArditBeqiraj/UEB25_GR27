@@ -1,3 +1,58 @@
+<?php
+$titulli = "Aerosales";
+define("Viti", 2025);
+
+$faqBuyers = [
+    "What are the Fees for a Buyer on AeroSales?" => "Buyer upfront costs amount to 10% of total aircraft cost...",
+    "Can I purchase a plane internationally?" => "Yes, AeroSales allows international buyers, subject to verification.",
+];
+
+function showFaqs($faqArray) {
+    foreach ($faqArray as $question => $answer) {
+        echo "<div class='faq-item'>";
+        echo "<button class='faq-question-buyers'>$question</button>";
+        echo "<div class='faq-answer'><p>$answer</p></div>";
+        echo "</div>";
+    }
+}
+
+$cmimi = 1500000;
+$interncaional = true;
+
+var_dump($cmimi);
+
+if ($cmimi > 1000000) {
+    echo "<p>This is a high-value aircraft.</p>";
+} else {
+    echo "<p>Affordable option!</p>";
+}
+
+ksort($faqBuyers);
+
+class Aeroplani {
+    public $modeli;
+    private $cmimi;
+
+    function __construct($modeli, $cmimi) {
+        $this->modeli = $modeli;
+        $this->cmimi = $cmimi;
+    }
+
+    function getCmimi() {
+        return $this->cmimi;
+    }
+
+    function setCmimi($value) {
+        if ($value > 0) $this->cmimi = $value;
+    }
+}
+
+$jet = new Aircraft("Gulfstream G700", 75000000);
+echo "<p>Modeli: {$jet->modeli}, Cmimi: {$jet->getCmimi()} EURO</p>";
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -37,8 +92,8 @@
     <header>
         <div class="hero">
             <hgroup>
-                <h1>Aerosales</h1>
-                <p>Buy, Trade & Sell with Aerosales</p>
+                <h1><?$titulli?></h1>
+                <p>Buy, Trade & Sell with <?$titulli?></p>
             </hgroup>
         </div>
     </header>
