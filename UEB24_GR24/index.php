@@ -14,6 +14,7 @@
 </head>
 
 <body>
+  <p></p>
   <nav>
     <div class="logo">
       <a href="index.html">
@@ -206,7 +207,7 @@
 
   <section class="jet-charter-luxury">
     <div class="image-container-luxury">
-      <img src="/UEB24_GR24/img/luxury.jpg" alt="Private Jet" />
+      <img src="./img/luxury.jpg" alt="Private Jet" />
     </div>
     <div class="text-container-luxury">
       <h2>Unparalleled Luxury</h2>
@@ -226,7 +227,7 @@
   <br />
   <section class="jet-charter-space">
     <div class="image-container-space">
-      <img src="/UEB24_GR24/img/space.jpg" alt="Private Jet" />
+      <img src="./img/space.jpg" alt="Private Jet" />
     </div>
     <div class="text-container-space">
       <h2>Unmatched Spaciousness in the Sky</h2>

@@ -7,7 +7,8 @@ $faqBuyers = [
     "Can I purchase a plane internationally?" => "Yes, AeroSales allows international buyers, subject to verification.",
 ];
 
-function showFaqs($faqArray) {
+function showFaqs($faqArray)
+{
     foreach ($faqArray as $question => $answer) {
         echo "<div class='faq-item'>";
         echo "<button class='faq-question-buyers'>$question</button>";
@@ -29,25 +30,29 @@ if ($cmimi > 1000000) {
 
 ksort($faqBuyers);
 
-class Aeroplani {
+class Aeroplani
+{
     public $modeli;
     private $cmimi;
 
-    function __construct($modeli, $cmimi) {
+    function __construct($modeli, $cmimi)
+    {
         $this->modeli = $modeli;
         $this->cmimi = $cmimi;
     }
 
-    function getCmimi() {
+    function getCmimi()
+    {
         return $this->cmimi;
     }
 
-    function setCmimi($value) {
+    function setCmimi($value)
+    {
         if ($value > 0) $this->cmimi = $value;
     }
 }
 
-$jet = new Aircraft("Gulfstream G700", 75000000);
+$jet = new Aeroplani("Gulfstream G700", 75000000);
 echo "<p>Modeli: {$jet->modeli}, Cmimi: {$jet->getCmimi()} EURO</p>";
 ?>
 
@@ -65,7 +70,7 @@ echo "<p>Modeli: {$jet->modeli}, Cmimi: {$jet->getCmimi()} EURO</p>";
     <link rel="stylesheet" href="css/nav_footer.css">
     <link rel="stylesheet" href="member/popup.css">
 
-    <script src="js/jquery-3.7.1.min.js" ></script>
+    <script src="js/jquery-3.7.1.min.js"></script>
 
 <body>
     <nav>
@@ -74,8 +79,8 @@ echo "<p>Modeli: {$jet->modeli}, Cmimi: {$jet->getCmimi()} EURO</p>";
                 <img src="img/logo and icons/Untitled 2.svg" alt="Site logo " style="width: 15rem;">
             </a>
         </div>
-        
-          <div style="padding: 0px 36px 0px 0px;">
+
+        <div style="padding: 0px 36px 0px 0px;">
             <a href="index.html" class="nav-text">Home</a>
             <a href="about.html" class="nav-text">About</a>
             <a href="recources.html" class="nav-text">Resources</a>
@@ -86,14 +91,14 @@ echo "<p>Modeli: {$jet->modeli}, Cmimi: {$jet->getCmimi()} EURO</p>";
         </div>
     </nav>
     <div id="popup">
- 
+
     </div>
 
     <header>
         <div class="hero">
             <hgroup>
-                <h1><?$titulli?></h1>
-                <p>Buy, Trade & Sell with <?$titulli?></p>
+                <h1><? $titulli ?></h1>
+                <p>Buy, Trade & Sell with <? $titulli ?></p>
             </hgroup>
         </div>
     </header>
@@ -283,7 +288,7 @@ echo "<p>Modeli: {$jet->modeli}, Cmimi: {$jet->getCmimi()} EURO</p>";
     </div>
 
 
-  <div id="footer"></div>
+    <div id="footer"></div>
 
     <script type="text/javascript">
         $('#footer').load('footer/footer.html');
