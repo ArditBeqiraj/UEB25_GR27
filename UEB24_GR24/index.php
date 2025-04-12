@@ -29,7 +29,7 @@ require_once 'partials/header.php';
 
 <div class="search-bar">
   <h2>Find your Aircraft</h2>
-  <form method="get" action="">
+  <form method="post" action="index.php">
     <div class="search">
       <label for="query">Search</label>
       <input
@@ -65,7 +65,7 @@ require_once 'partials/header.php';
 
 <div class="showcase">
   <div class="imagecontainer">
-    <a href="Sales/Jet.html">
+    <a href="aircraft.php?id=learjet75">
       <figure>
         <img
           src="img/plane-images/Learjet 75/2015 LEARJET 75.webp"
