@@ -14,7 +14,6 @@
 </head>
 
 <body>
-  <p></p>
   <nav>
     <div class="logo">
       <a href="index.html">

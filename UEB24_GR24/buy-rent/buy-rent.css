@@ -2,7 +2,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    overflow: hidden;}
+    /* overflow: hidden; */
+}
 
 body {
     font-family: 'Segoe UI';
@@ -26,7 +27,7 @@ body {
     align-items: center;
     padding: 48px;
     width: 750px;
-    
+    margin-top: 100px;
 }
 
 .form-box {
