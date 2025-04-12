@@ -1,39 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AeroSales</title>
-    <script src="https://kit.fontawesome.com/37d6505749.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css/airplane.css">
-    <link rel="stylesheet" href="footer/footer.css">
-    <link rel="stylesheet" href="css/nav_footer.css">
-    <link rel="stylesheet" href="member/popup.css">
-    <link rel="stylesheet" href="css/contact.css">
-    <script src="js/jquery-3.7.1.min.js"></script>
-</head>
-<body>
-    <nav>
-        <div class="logo">
-            <a href="index.html">
-                <img src="img/logo and icons/Untitled 2.svg" alt="Site logo " style="width: 15rem;">
-            </a>
-        </div>
-        <div class="navigation">
-            <a href="index.html" class="nav-text">Home</a>
-            <a href="about.html" class="nav-text">About</a>
-            <a href="recources.html" class="nav-text">Resources</a>
-            <a href="staff.html" class="nav-text">Staff</a>
-            <a href="contact.html" class="nav-text">Contact</a>
-            <a href="#log-in" id="log-inOrsign-up" class="nav-text">Log in/Sign up</a>
-
-        </div>
-    </nav><br>
+<?php
+$customCSS = "css/contact.css";
+require_once 'partials/header.php';
+?>
+<br>
 
     <?xml version="1.0"?>
-    <h1 style="text-align: center; text-decoration: underline;"><b>AeroSales Offices</b></h1><br>
+    <h1 style="text-align: center; text-decoration: underline; margin-top:100px;"><b>AeroSales Offices</b></h1><br>
     <div id="name">
         <p id="namep" style="margin: 2px; color:black">Name</p>
     </div>
