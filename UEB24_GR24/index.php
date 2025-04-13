@@ -83,7 +83,7 @@ require_once 'partials/header.php';
           src="img/plane-images/beechcraft 58/beechcraft.webp"
           alt="beechcraft" />
         <p>#N4380W</p>
-        <figcaption>1974 BEECHCRAFT 58</figcaption>
+        <figcaption>1974 BEECHCRAFT 588</figcaption>
       </figure>
     </a>
   </div>

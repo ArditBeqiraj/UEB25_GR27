@@ -15,7 +15,7 @@ $aircrafts = [
         'manufacturer' => 'Learjet',
         'model' => '75',
         'price' => 8500000
-    ],
+    ]
 ];
 
 $aircraftId = $_GET['id'] ?? null;
@@ -138,7 +138,7 @@ $aircraft = $aircrafts[$aircraftId] ?? null;
             localStorage.setItem("selectedName", selectedName);
 
             // Shko te site
-            window.location.href = "./buy-rent/buy-rent.html";
+            window.location.href = "./buy-rent/buy-rent.php";
         });
     });
     document.querySelectorAll(".height").forEach(button => {
