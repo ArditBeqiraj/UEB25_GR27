@@ -15,7 +15,7 @@ $aircrafts = [
         'manufacturer' => 'Learjet',
         'model' => '75',
         'price' => 8500000
-    ]
+    ],
 ];
 
 $aircraftId = $_GET['id'] ?? null;
