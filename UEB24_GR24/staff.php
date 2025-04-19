@@ -33,6 +33,84 @@ require_once 'partials/header.php';
     </div>
 </div>
 
+
+<?php
+$teamRoles = [
+    "Pilot" => "Operates aircraft safely and efficiently, ensuring a smooth flight experience for passengers.",
+    "Engineer" => "Maintains, repairs, and inspects aircraft systems to guarantee airworthiness.",
+    "Flight Attendant" => "Provides customer service, ensures passenger safety, and manages in-flight operations.",
+    "Sales" => "Assists clients in purchasing or leasing aircraft, offering guidance and support throughout the process.",
+    "Ground Staff" => "Handles on-ground operations like baggage, logistics, and passenger boarding.",
+    "Air Traffic Controller" => "Coordinates aircraft movements on the ground and in the air to maintain safe distances."
+];
+?>
+
+
+
+
+<?php
+
+$teamMembers = [
+    "John Doe" => ["role" => "Sales", "img" => "img/Staff/sales2.jpg"],
+    "James Smith" => ["role" => "Sales", "img" => "img/Staff/sales3.jpg"],
+    "Bob Johnson" => ["role" => "Sales", "img" => "img/Staff/sales4.jpg"],
+    "Emily Brown" => ["role" => "Technical", "img" => "img/Staff/technical1.jpg"],
+    "Michael Lee" => ["role" => "Technical", "img" => "img/Staff/technical3.jpg"],
+    "Alex Turner" => ["role" => "Flight Operations", "img" => "img/Staff/alex turner.jpg"],
+    "David Johnson" => ["role" => "Finance", "img" => "img/Staff/finance1.webp"],
+    "Laura Martinez" => ["role" => "Legal", "img" => "img/Staff/finance2.jpg"]
+];
+
+
+$selectedRole = isset($_GET['role']) ? $_GET['role'] : ''; 
+?>
+
+
+<form method="GET">
+    <label for="role">Filter by Role:</label>
+    <select name="role" id="role" onchange="this.form.submit()">
+        <option value="">All</option>
+        <option value="Sales" <?php echo ($selectedRole == 'Sales') ? 'selected' : ''; ?>>Sales</option>
+        <option value="Technical" <?php echo ($selectedRole == 'Technical') ? 'selected' : ''; ?>>Technical</option>
+        <option value="Flight Operations" <?php echo ($selectedRole == 'Flight Operations') ? 'selected' : ''; ?>>Flight Operations</option>
+        <option value="Finance" <?php echo ($selectedRole == 'Finance') ? 'selected' : ''; ?>>Finance</option>
+        <option value="Legal" <?php echo ($selectedRole == 'Legal') ? 'selected' : ''; ?>>Legal</option>
+    </select>
+</form>
+
+
+<section class="team-section">
+    <h1>Meet Some Of Our Team</h1>
+    <div class="team-container">
+        <?php
+        foreach ($teamMembers as $name => $details) {
+            if ($selectedRole == '' || $selectedRole == $details['role']) {
+                echo "<div class='team-member'>
+                        <img src='{$details['img']}' alt='$name' class='team-photo'>
+                        <h2>$name</h2>
+                        <p>{$details['role']}</p>
+                    </div>";
+            }
+        }
+        ?>
+    </div>
+</section>
+
+
+<section class="team-section roles-section">
+    <h1>Our Team Roles</h1>
+    <div class="roles-container">
+        <?php foreach ($teamRoles as $role => $description): ?>
+            <div class="role-card">
+                <h2><?= htmlspecialchars($role) ?></h2>
+                <p class="hover-desc"><?= htmlspecialchars($description) ?></p>
+            </div>
+        <?php endforeach; ?>
+    </div>
+</section>
+
+
+
 <section class="team-section">
     <h1>Meet Our Sales Team</h1>
     <div class="team-container">
