@@ -9,9 +9,9 @@ body {
   letter-spacing: 1px;
   font-size: 18px;
   width: 100%;
-  height: 100%; /* Ensure the body covers the entire viewport height */
+  height: 100%; 
   
-  /* Stacked Background Images */
+  
   background-image: 
   url('../img/formation/bg.avif'),  
   url('../img/formation/bg1.avif'),  
@@ -154,7 +154,7 @@ ul {
   object-fit: cover;
   position: absolute;
   border-radius: 15px;
-  display: none;/* Hide all images initially */
+  display: none;
   opacity: 0;
   
 }

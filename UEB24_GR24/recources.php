@@ -93,6 +93,14 @@ require_once 'partials/header.php';
 <br>
 
 
+<?php
+$flights = [
+  ['flight' => 'AA123', 'airline' => 'American Airlines', 'destination' => 'New York (JFK)', 'time' => '12:45 PM', 'status' => 'On Time'],
+  ['flight' => 'DL456', 'airline' => 'Delta Airlines', 'destination' => 'Atlanta (ATL)', 'time' => '1:30 PM', 'status' => 'Delayed'],
+  ['flight' => 'UA789', 'airline' => 'United Airlines', 'destination' => 'Chicago (ORD)', 'time' => '2:15 PM', 'status' => 'Cancelled'],
+];
+?>
+
 <section class="Flights">
   <title>Live Flight Status</title>
   <div class="flight-status">
@@ -108,33 +116,24 @@ require_once 'partials/header.php';
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>AA123</td>
-          <td>American Airlines</td>
-          <td>New York (JFK)</td>
-          <td>12:45 PM</td>
-          <td class="on-time">On Time</td>
-        </tr>
-        <tr>
-          <td>DL456</td>
-          <td>Delta Airlines</td>
-          <td>Atlanta (ATL)</td>
-          <td>1:30 PM</td>
-          <td class="delayed">Delayed</td>
-        </tr>
-        <tr>
-          <td>UA789</td>
-          <td>United Airlines</td>
-          <td>Chicago (ORD)</td>
-          <td>2:15 PM</td>
-          <td class="cancelled">Cancelled</td>
-        </tr>
+        <?php foreach ($flights as $flight): ?>
+          <tr>
+            <td><?= htmlspecialchars($flight['flight']) ?></td>
+            <td><?= htmlspecialchars($flight['airline']) ?></td>
+            <td><?= htmlspecialchars($flight['destination']) ?></td>
+            <td><?= htmlspecialchars($flight['time']) ?></td>
+            <td class="<?= strtolower(str_replace(' ', '-', $flight['status'])) ?>">
+              <?= htmlspecialchars($flight['status']) ?>
+            </td>
+          </tr>
+        <?php endforeach; ?>
       </tbody>
     </table>
   </div>
 </section>
 
 <br>
+
 
 <section class="Finance">
   <title>Financing and Leasing</title>
@@ -340,7 +339,7 @@ require_once 'partials/header.php';
       </ul>
     </div>
 
-    <!-- Safety Resources Tab Content -->
+    
     <div id="safety-tab" class="resource-tab-content">
       <h3>Safety Resources</h3>
       <p class="intro-text">Stay prepared with essential safety guidelines and tools.</p>
@@ -383,6 +382,7 @@ require_once 'partials/header.php';
 <script type="text/javascript" src="js/recources.js "></script>
 <script type="text/javascript" src="js/nav_footer.js"></script>
 <script type="text/javascript" src="js/popup.js"></script>
+
 </body>
 
 </html>
