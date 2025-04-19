@@ -54,20 +54,15 @@ class Aeroplani
 
 $jet = new Aeroplani("Gulfstream G700", 75000000);
 echo "<p>Modeli: {$jet->modeli}, Cmimi: {$jet->getCmimi()} EURO</p>";
-?>
 
-
-
-<?php
 $customCSS = "css/about.css";
 require_once 'partials/header.php';
 ?>
 
-
 <header>
     <div class="hero">
         <hgroup>
-            <h1><? $titulli ?></h1>
+            <h1><?= $titulli ?></h1>
             <p>Buy, Trade & Sell with <? $titulli ?></p>
         </hgroup>
     </div>
