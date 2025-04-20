@@ -94,6 +94,31 @@ require_once 'partials/header.php';
 
 
 <?php
+$aviation_facts = [
+  "The world’s busiest airport by passenger traffic is Hartsfield–Jackson Atlanta International Airport.",
+  "The Airbus A380 is the largest passenger aircraft in the world.",
+  "The Concorde could fly from New York to London in under 3.5 hours.",
+  "The longest non-stop flight in the world is from New York to Singapore (~18 hours).",
+  "Commercial aircraft are typically struck by lightning once a year — and they’re built to handle it!",
+  "The Boeing 747 has over 6 million parts.",
+  "Pilots and co-pilots are usually served different meals in case of food poisoning."
+];
+
+$random_fact = $aviation_facts[array_rand($aviation_facts)];
+?>
+
+<div class="flight-status" style="background-color: #f9f9f9; margin-top: 2rem;">
+  <h2>✈️ Did You Know?</h2>
+  <p style="text-align: center; font-style: italic; color: #333;">
+    <?= htmlspecialchars($random_fact) ?>
+  </p>
+</div>
+
+
+<br>
+
+
+<?php
 $flights = [
   ['flight' => 'AA123', 'airline' => 'American Airlines', 'destination' => 'New York (JFK)', 'time' => '12:45 PM', 'status' => 'On Time'],
   ['flight' => 'DL456', 'airline' => 'Delta Airlines', 'destination' => 'Atlanta (ATL)', 'time' => '1:30 PM', 'status' => 'Delayed'],
@@ -130,6 +155,37 @@ $flights = [
       </tbody>
     </table>
   </div>
+</section>
+
+<br>
+
+<section class="centered-section">
+  <h2>Flight Checker</h2>
+  <form method="POST">
+    <label for="destination">Destination:</label>
+    <input type="text" id="destination" name="destination" required>
+    <button type="submit">Check Flight</button>
+  </form>
+
+  <?php
+    define("DEFAULT_DESTINATION", "New York");
+    $flights = ["New York", "London", "Paris", "Berlin"];
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $dest = $_POST["destination"];
+        echo "<p><strong>Destination entered:</strong> " . htmlspecialchars($dest) . "</p>";
+
+        if (in_array($dest, $flights)) {
+            echo "<p style='color: green;'>Flight to $dest is available! ✅</p>";
+        } else {
+            echo "<p style='color: red;'>No flights available to $dest. ❌</p>";
+        }
+
+        echo "<pre>";
+        var_dump($flights);
+        echo "</pre>";
+    }
+  ?>
 </section>
 
 <br>
