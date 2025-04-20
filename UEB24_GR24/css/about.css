@@ -10,8 +10,6 @@
 }
 
 header {
-    text-align: center;
-    background-size: cover;
     height: 70vh;
     display: flex;
     flex-direction: column;
@@ -20,7 +18,7 @@ header {
     text-align: center;
     padding: 0 20px 50px;
     color: #ffffff;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/UEB24_GR24/img/about/artak-petrosyan-RUBKuvuXdLU-unsplash.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(UEB24_GR24/img/about/mark-adrian-thomas-9QaIdm0B1Uc-unsplash.jpg);
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -29,7 +27,7 @@ header {
 
 @font-face {
     font-family: 'font';
-    src: url(/font/Flight21.ttf);
+    src: url('/font/Flight21.ttf');
 }
 
 .hero h1 {
@@ -211,7 +209,7 @@ header {
     font-size: 18px;
     font-weight: bold;
     background-color: rgba(89, 127, 151, 0.91);
-    color: white;
+    color: rgb(255, 255, 255);
     text-align: left;
     border: none;
     border-radius: 5px;
@@ -248,7 +246,7 @@ header {
 }
 
 .carbon {
-    background-image: url(/UEB24_GR24/img/about/mark-adrian-thomas-9QaIdm0B1Uc-unsplash.jpg);
+    background-color: #333;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;

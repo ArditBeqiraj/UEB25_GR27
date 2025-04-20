@@ -6,69 +6,12 @@ $faqBuyers = [
     "What are the Fees for a Buyer on AeroSales?" => "Buyer upfront costs amount to 10% of total aircraft cost...",
     "Can I purchase a plane internationally?" => "Yes, AeroSales allows international buyers, subject to verification.",
 ];
-
-function showFaqs($faqArray)
-{
-    foreach ($faqArray as $question => $answer) {
-        echo "<div class='faq-item'>";
-        echo "<button class='faq-question-buyers'>$question</button>";
-        echo "<div class='faq-answer'><p>$answer</p></div>";
-        echo "</div>";
-    }
-}
-
-$cmimi = 1500000;
-$interncaional = true;
-
-var_dump($cmimi);
-
-if ($cmimi > 1000000) {
-    echo "<p>This is a high-value aircraft.</p>";
-} else {
-    echo "<p>Affordable option!</p>";
-}
-
-ksort($faqBuyers);
-
-class Aeroplani
-{
-    public $modeli;
-    private $cmimi;
-
-    function __construct($modeli, $cmimi)
-    {
-        $this->modeli = $modeli;
-        $this->cmimi = $cmimi;
-    }
-
-    function getCmimi()
-    {
-        return $this->cmimi;
-    }
-
-    function setCmimi($value)
-    {
-        if ($value > 0) $this->cmimi = $value;
-    }
-}
-
-$jet = new Aeroplani("Gulfstream G700", 75000000);
-echo "<p>Modeli: {$jet->modeli}, Cmimi: {$jet->getCmimi()} EURO</p>";
 ?>
-
-
-
-<?php
-$customCSS = "css/about.css";
-require_once 'partials/header.php';
-?>
-
-
-<header>
+<header style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(./img/about/sea.jpg);">
     <div class="hero">
         <hgroup>
-            <h1><? $titulli ?></h1>
-            <p>Buy, Trade & Sell with <? $titulli ?></p>
+        <h1><?= $titulli ?></h1>
+            <p >Buy, Trade & Sell with <?= $titulli ?></p>
         </hgroup>
     </div>
 </header>
@@ -116,8 +59,8 @@ require_once 'partials/header.php';
     </section>
     <br>
 
-    <section class="jet-charter-luxury">
-        <div class="carbon">
+    <section class="jet-charter-luxury" >
+        <div class="carbon" style = "background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(./img/about/carbon.jpg);">
             <h2>We are carbon neutral</h2><br><br>
             <p>
                 Each year we offset 100% of our annual business emissions, while investing in a variety of
@@ -271,6 +214,59 @@ require_once 'partials/header.php';
 <script type="text/javascript" src="js/about.js"></script>
 <script type="text/javascript" src="js/nav_footer.js"></script>
 <script type="text/javascript" src="js/popup.js"></script>
+
+<?php
+function showFaqs($faqArray)
+{
+    foreach ($faqArray as $question => $answer) {
+        echo "<div class='faq-item'>";
+        echo "<button class='faq-question-buyers'>$question</button>";
+        echo "<div class='faq-answer'><p>$answer</p></div>";
+        echo "</div>";
+    }
+}
+
+$cmimi = 1500000;
+$interncaional = true;
+
+var_dump($cmimi);
+
+if ($cmimi > 1000000) {
+    echo "<p>This is a high-value aircraft.</p>";
+} else {
+    echo "<p>Affordable option!</p>";
+}
+
+ksort($faqBuyers);
+
+class Aeroplani
+{
+    public $modeli;
+    private $cmimi;
+
+    function __construct($modeli, $cmimi)
+    {
+        $this->modeli = $modeli;
+        $this->cmimi = $cmimi;
+    }
+
+    function getCmimi()
+    {
+        return $this->cmimi;
+    }
+
+    function setCmimi($value)
+    {
+        if ($value > 0) $this->cmimi = $value;
+    }
+}
+
+$jet = new Aeroplani("Gulfstream G700", 75000000);
+echo "<p>Modeli: {$jet->modeli}, Cmimi: {$jet->getCmimi()} EURO</p>";
+
+$customCSS = "css/about.css";
+require_once 'partials/header.php';
+?>
 </body>
 
 </html>
