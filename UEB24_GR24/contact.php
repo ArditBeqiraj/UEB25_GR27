@@ -259,11 +259,21 @@ require_once('map.php');
     }
 
     function validateName(name) {
+        const namePattern = /^[A-Za-z\s]{2,}$/;
+
         if (!name.value.trim()) {
             alert('Please enter your full name.');
             name.focus();
             return false;
         }
+
+        if (!namePattern.test(name.value)) {
+            alert('Please enter a valid name with at least 2 characters (only letters and spaces allowed).');
+
+            name.focus();
+            return false;
+        }
+
         return true;
     }
 
