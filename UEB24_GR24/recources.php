@@ -5,44 +5,6 @@ require_once 'partials/header.php';
 
 ?>
 
-
-<!-- <!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Aerosales</title>
-  <link rel="stylesheet" href="css/recources.css">
-  <link rel="stylesheet" href="css/nav_footer.css">
-  <link rel="stylesheet" href="footer/footer.css">
-  <link rel="stylesheet" href="member/popup.css">
-
-  <script src="js/jquery-3.7.1.min.js"></script>
-</head>
-
-<body>
-
-  <nav style="background-color: #183251;  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);">
-    <div class="logo">
-      <a href="index.html">
-        <img src="img/logo and icons/Untitled 2.svg" alt="Site logo " style="width: 15rem;">
-      </a>
-    </div>
-    <div class="navigation">
-      <a href="index.php" class="nav-text">Home</a>
-      <a href="about.php" class="nav-text">About</a>
-      <a href="recources.php" class="nav-text">Resources</a>
-      <a href="staff.php" class="nav-text">Staff</a>
-      <a href="contact.php" class="nav-text">Contact</a>
-      <a href="#log-in" id="log-inOrsign-up" class="nav-text">Log in/Sign up</a>
-
-    </div>
-  </nav>
-  <div id="popup">
-  </div> -->
-
-
 <div class="popup">
   <img class="close" src="img/logo and icons/close-circle-svgrepo-com.svg" alt="close">
 
@@ -184,6 +146,33 @@ $flights = [
         echo "<pre>";
         var_dump($flights);
         echo "</pre>";
+    }
+  ?>
+</section>
+
+<br>
+
+
+<section class="centered-section">
+  <h2>Flight Code Validator</h2>
+  <form method="POST">
+    <label for="flightcode">Enter Flight Code:</label>
+    <input type="text" id="flightcode" name="flightcode" required>
+    <button type="submit">Validate</button>
+  </form>
+
+  <?php
+    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["flightcode"])) {
+        $flightCode = strtoupper(trim($_POST["flightcode"]));
+
+        echo "<p><strong>Flight code entered:</strong> " . htmlspecialchars($flightCode) . "</p>";
+
+        //Shkruaj 2-3 shkronja dhe pastaj 1-4 numra
+        if (preg_match("/^[A-Z]{2,3}\d{1,4}$/", $flightCode)) {
+            echo "<p style='color: green;'>✅ Valid flight code format.</p>";
+        } else {
+            echo "<p style='color: red;'>❌ Invalid flight code format. Use formats like 'AA123' or 'DL4567'.</p>";
+        }
     }
   ?>
 </section>
@@ -420,6 +409,43 @@ $flights = [
     </div>
   </div>
 </section>
+
+<section class="centered-section">
+  <h2>Other Resources</h2>
+  <?php
+    
+    class Resource {
+        private $title;
+        private $type;
+        private $link;
+
+        public function __construct($title, $type, $link) {
+            $this->title = $title;
+            $this->type = $type;
+            $this->link = $link;
+        }
+
+        public function getFormattedResource() {
+            return "<li><strong>{$this->title}</strong> <span>({$this->type})</span> - <a href='{$this->link}' target='_blank'>Download</a></li>";
+        }
+    }
+
+    
+    $resources = [
+        new Resource("Company Handbook", "PDF", "resources/company-handbook.pdf"),
+        new Resource("Onboarding Guide", "DOCX", "resources/onboarding-guide.docx"),
+        new Resource("Sales Template", "PPTX", "resources/sales-template.pptx")
+    ];
+
+ 
+    echo "<ul class='resource-list'>";
+    foreach ($resources as $resource) {
+        echo $resource->getFormattedResource();
+    }
+    echo "</ul>";
+  ?>
+</section>
+
 
 
 
