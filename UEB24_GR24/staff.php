@@ -108,6 +108,29 @@ $selectedRole = isset($_GET['role']) ? $_GET['role'] : '';
 </section>
 
 
+<?php
+
+$teamMottos = [
+    "Together we fly higher!",
+    "Unity is our strength!",
+    "One team, one sky.",
+    "We rise by lifting each other.",
+    "Aviation is our passion, teamwork is our power!",
+    "The sky's the limit when we're together!"
+];
+
+
+$randomMotto = $teamMottos[array_rand($teamMottos)];
+?>
+
+<section class="team-section team-motto-section">
+    <h1>Our Team Spirit</h1>
+    <p class="team-motto"><?php echo $randomMotto; ?></p>
+</section>
+
+
+
+
 <section class="team-section">
     <h1>Meet Our Sales Team</h1>
     <div class="team-container">
@@ -259,6 +282,27 @@ $selectedRole = isset($_GET['role']) ? $_GET['role'] : '';
         </div>
     </div>
 </section>
+
+
+<?php
+
+$GLOBALS['teamAchievements'] = [
+    "John Doe won the 'Employee of the Month' award for outstanding sales performance!",
+    "The Sales team exceeded their quarterly target by 25%!",
+    "Alex Turner completed a successful test flight on the new aircraft model!",
+    "The Tech team launched a new update that improved system performance by 40%!",
+    "Sophia Wilson led a successful marketing campaign, increasing brand awareness by 30%!"
+];
+
+
+$randomAchievement = $GLOBALS['teamAchievements'][array_rand($GLOBALS['teamAchievements'])];
+?>
+
+<section class="team-achievements-section">
+    <h1>Our Recent Achievements</h1>
+    <p class="team-achievement"><?php echo $randomAchievement; ?></p>
+</section>
+
 
 <div id="footer"></div>
 
