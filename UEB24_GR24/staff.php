@@ -77,6 +77,23 @@ $selectedRole = isset($_GET['role']) ? $_GET['role'] : '';
 </form>
 
 
+<?php
+session_start();
+
+if (isset($_GET['favorite'])) {
+    $_SESSION['favorite_member'] = $_GET['favorite'];
+}
+
+$favorite = isset($_SESSION['favorite_member']) ? $_SESSION['favorite_member'] : null;
+?>
+
+<?php if ($favorite): ?>
+    <div class="favorite-banner">
+        ⭐ Your favorite team member is: <strong><?= htmlspecialchars($favorite) ?></strong>
+    </div>
+<?php endif; ?>
+
+
 <section class="team-section">
     <h1>Meet Some Of Our Team</h1>
     <div class="team-container">
@@ -87,8 +104,10 @@ $selectedRole = isset($_GET['role']) ? $_GET['role'] : '';
                         <img src='{$details['img']}' alt='$name' class='team-photo'>
                         <h2>$name</h2>
                         <p>{$details['role']}</p>
+                       <a href='?favorite=" . urlencode($name) . "' class='favorite-btn'>⭐ Mark as Favorite</a>
                     </div>";
             }
+            
         }
         ?>
     </div>

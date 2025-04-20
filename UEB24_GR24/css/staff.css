@@ -269,6 +269,30 @@ form select:focus {
     line-height: 1.5;
 }
 
+.favorite-banner {
+    background-color: #fff8dc;
+    border: 2px dashed #ffa500;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+.favorite-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 6px 12px;
+    background-color: #ffd700;
+    color: #000;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background-color 0.2s ease;
+}
+
+.favorite-btn:hover {
+    background-color: #ffbf00;
+}
 
 
 
