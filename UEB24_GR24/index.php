@@ -77,7 +77,7 @@ require_once 'partials/header.php';
   </div>
 
   <div class="imagecontainer">
-    <a href="Sales/Multi engine.html">
+    <a href="aircraft.php?id=helicopter">
       <figure>
         <img
           src="img/plane-images/beechcraft 58/beechcraft.webp"
@@ -89,7 +89,7 @@ require_once 'partials/header.php';
   </div>
 
   <div class="imagecontainer">
-    <a href="Sales/Jet.html#gulfstream">
+    <a href="aircraft.php?id=jet">
       <figure>
         <img
           src="img/plane-images/gulfstream gv/N1120G - 2000 GULFSTREAM GV.webp"
@@ -100,7 +100,7 @@ require_once 'partials/header.php';
     </a>
   </div>
   <div class="imagecontainer">
-    <a href="Sales/Single-engine.html">
+    <a href="aircraft.php?single-engine">
       <figure>
         <img
           src="img/plane-images/cessna/cessna.jpg"

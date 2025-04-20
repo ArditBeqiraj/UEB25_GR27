@@ -15,6 +15,45 @@ $aircrafts = [
         'manufacturer' => 'Learjet',
         'model' => '75',
         'price' => 8500000
+    ],
+    'helicopter' => [
+        'main_image' => 'img/plane-images/airbus/airbus.webp',
+        'name' => 'Helicopter',
+        'registration' => '#XA-RSC',
+        'year' => '2015',
+        'condition' => 'used',
+        'total-time' => '4500 hours',
+        'program' => 'Recently overhauled Continental O-470 engine.',
+        'notes' => 'Traditional red and white paint scheme with polished accents.',
+        'manufacturer' => 'Learjet',
+        'model' => '75',
+        'price' => 8500000
+    ],
+    'jet' => [
+        'main_image' => 'img/plane-images/Learjet 75/2015 LEARJET 75.webp',
+        'name' => '2015 LEARJET 75',
+        'registration' => '#XA-RSC',
+        'year' => '2015',
+        'condition' => 'used',
+        'total-time' => '4500 hours',
+        'program' => 'Recently overhauled Continental O-470 engine.',
+        'notes' => 'Traditional red and white paint scheme with polished accents.',
+        'manufacturer' => 'Learjet',
+        'model' => '75',
+        'price' => 8500000
+    ],
+    'single-engine' => [
+        'main_image' => 'img/plane-images/cessna/cessna.jpg',
+        'name' => '2015 LEARJET 75',
+        'registration' => '#XA-RSC',
+        'year' => '2015',
+        'condition' => 'used',
+        'total-time' => '4500 hours',
+        'program' => 'Recently overhauled Continental O-470 engine.',
+        'notes' => 'Traditional red and white paint scheme with polished accents.',
+        'manufacturer' => 'Learjet',
+        'model' => '75',
+        'price' => 8500000
     ]
 ];
 
