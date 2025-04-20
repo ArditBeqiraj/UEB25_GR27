@@ -37,12 +37,12 @@
                             <h3>Log In</h3>
                         </div>
 
-                        <form class="forma-login" action="">
+                        <form class="forma-login" action="validate_login.php" method="POST">
                             <div class="li-inputet">
-                                <input class="li-email" type="email" placeholder="Email" required>
+                                <input class="li-email" type="email" name="email" placeholder="Email" required>
 
                                 <div class="li-password-container">
-                                    <input type="password" id="li-password" placeholder="Password" required
+                                    <input type="password" id="li-password" name="password" placeholder="Password" required
                                         minlength="8">
                                     <span class="li-toggle-password">
                                         <i class="fa-solid fa-eye li-eye"></i>
@@ -91,17 +91,17 @@
                             <h3>Sign Up</h3>
                         </div>
 
-                        <form class="forma-signup" action="">
+                        <form class="forma-signup" action="validate_signup.php" method="POST">
                             <div class="su-inputet">
                                 <div class="su-name-surname">
-                                    <input class="su-name" type="text" placeholder="Name" required>
-                                    <input class="su-surname" type="text" placeholder="Surname" required>
+                                    <input class="su-name" type="text" name="name" placeholder="Name" required>
+                                    <input class="su-surname" type="text" name="surname" placeholder="Surname" required>
                                 </div>
-                                <input class="su-username" type="text" placeholder="Username" required>
+                                <input class="su-username" type="text" name="username" placeholder="Username" required>
 
-                                <input class="su-email" type="email" placeholder="Email" required>
+                                <input class="su-email" type="email" name="email" placeholder="Email" required>
                                 <div class="su-password-container">
-                                    <input type="password" id="su-password" placeholder="Password" required
+                                    <input type="password" id="su-password" name="password" placeholder="Password" required
                                         minlength="8">
                                     <span class="su-toggle-password">
                                         <i class="fa-solid fa-eye su-eye"></i>
