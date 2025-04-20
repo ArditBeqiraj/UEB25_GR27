@@ -46,8 +46,6 @@ $teamRoles = [
 ?>
 
 
-
-
 <?php
 
 $teamMembers = [
@@ -108,7 +106,6 @@ $selectedRole = isset($_GET['role']) ? $_GET['role'] : '';
         <?php endforeach; ?>
     </div>
 </section>
-
 
 
 <section class="team-section">

@@ -159,8 +159,6 @@ ul {
   
 }
 
-
-
 .slideshow-image.active {
 display: block; 
 opacity: 1; 
@@ -408,4 +406,51 @@ table td {
   to {
       opacity: 1;
   }
+}
+
+
+.flight-status h2 {
+  color: #004080;
+  margin-bottom: 10px;
+}
+
+.flight-status p {
+  font-size: 1.1rem;
+  color: #444;
+}
+
+
+.centered-section {
+  text-align: center;
+  margin: 40px auto;
+  max-width: 600px;
+  padding: 30px;
+  background-color: #f5f5f5;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.centered-section input,
+.centered-section button {
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  width: 80%;
+  max-width: 300px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 16px;
+}
+
+.centered-section button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.centered-section button:hover {
+  background-color: #0056b3;
 }

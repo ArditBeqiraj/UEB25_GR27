@@ -18,7 +18,7 @@ header {
     text-align: center;
     padding: 0 20px 50px;
     color: #ffffff;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(UEB24_GR24/img/about/mark-adrian-thomas-9QaIdm0B1Uc-unsplash.jpg);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/UEB24_GR24/img/about/artak-petrosyan-RUBKuvuXdLU-unsplash.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
