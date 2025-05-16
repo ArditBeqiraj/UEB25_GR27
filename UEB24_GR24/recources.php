@@ -55,6 +55,39 @@ require_once 'partials/header.php';
 <br>
 
 
+
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["favorite_airport"])) {
+    $_SESSION["favorite_airport"] = $_POST["favorite_airport"];
+}
+?>
+
+<section class="centered-section">
+  <h2>Your Favorite Airport 🌍</h2>
+  <form method="POST">
+    <label for="favorite_airport">Select your favorite airport:</label>
+    <select name="favorite_airport" id="favorite_airport" required>
+      <option value="" disabled selected>Choose an airport</option>
+      <option value="Dubai International (DXB)">Dubai International (DXB)</option>
+      <option value="Madrid-Barajas (MAD)">Madrid-Barajas (MAD)</option>
+      <option value="Hartsfield–Jackson Atlanta (ATL)">Hartsfield–Jackson Atlanta (ATL)</option>
+      <option value="Frankfurt Airport (FRA)">Frankfurt Airport (FRA)</option>
+      <option value="Tokyo Haneda (HND)">Tokyo Haneda (HND)</option>
+      <option value="Charles de Gaulle (CDG)">Charles de Gaulle (CDG)</option>
+    </select>
+    <button type="submit">Save Favorite</button>
+  </form>
+
+  <?php if (isset($_SESSION["favorite_airport"])): ?>
+    <p style="margin-top: 1rem; color: green;">
+      ✅ Your favorite airport is: <strong><?= htmlspecialchars($_SESSION["favorite_airport"]) ?></strong>
+    </p>
+  <?php endif; ?>
+</section>
+
+<br>
+
+
 <?php
 $aviation_facts = [
   "The world’s busiest airport by passenger traffic is Hartsfield–Jackson Atlanta International Airport.",

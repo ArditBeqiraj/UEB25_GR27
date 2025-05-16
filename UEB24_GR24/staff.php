@@ -322,6 +322,43 @@ $randomAchievement = $GLOBALS['teamAchievements'][array_rand($GLOBALS['teamAchie
     <p class="team-achievement"><?php echo $randomAchievement; ?></p>
 </section>
 
+<?php
+// --- Visit Counter ---
+if (!isset($_SESSION['visit_count'])) {
+    $_SESSION['visit_count'] = 1;
+} else {
+    $_SESSION['visit_count']++;
+}
+
+// --- Handle Name Form ---
+if (isset($_POST['username'])) {
+    $username = trim($_POST['username']);
+    setcookie('username', $username, time() + (86400 * 30)); // 30 days
+    header("Location: " . $_SERVER['PHP_SELF']);
+    exit;
+}
+
+// --- Get Username from Cookie ---
+$username = isset($_COOKIE['username']) ? $_COOKIE['username'] : null;
+?>
+
+<div class="greeting" style="text-align: center; margin: 20px; font-size: 18px;">
+    <?php if ($username): ?>
+        <h2>Welcome back, <?php echo htmlspecialchars($username); ?>!</h2>
+    <?php else: ?>
+        <form method="post" style="text-align: center; margin: 20px;">
+            <label for="username">Enter your name:</label><br>
+            <input type="text" name="username" id="username" required>
+            <button type="submit">Save</button>
+        </form>
+    <?php endif; ?>
+</div>
+
+<div class="visit-counter" style="text-align: center; margin: 10px; color: #555;">
+    <p>You have visited this page <?php echo $_SESSION['visit_count']; ?> times.</p>
+</div>
+
+
 
 <div id="footer"></div>
 
