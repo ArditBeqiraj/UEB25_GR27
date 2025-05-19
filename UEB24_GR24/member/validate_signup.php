@@ -1,6 +1,5 @@
 <?php
-require_once 'functions.php';
-require_once 'User.php';
+require_once 'popup-functions.php';
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $name = $_POST["name"] ?? "";
@@ -28,12 +27,4 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         echo "Password must be at least 8 characters and contain at least one number.";
         return;
     }
-
-    $user = new User($name, $surname, $username, $email);
-    $user->setPassword($password);
-
-    var_dump($user);
-
-    echo "Signup successful!";
 }
-?>
