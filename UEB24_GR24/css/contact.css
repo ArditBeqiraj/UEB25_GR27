@@ -1,8 +1,8 @@
-
-*{
-     font-family: 'Segoe UI';
-        letter-spacing: 1px;
+* {
+    font-family: 'Segoe UI';
+    letter-spacing: 1px;
 }
+
 #popup1 {
     background: radial-gradient(circle, transparent, #2a3d48);
     width: 100%;
@@ -69,7 +69,7 @@
 }
 
 #name {
-    position:fixed;
+    position: fixed;
     background-color: rgb(255, 255, 255);
     width: fit-content;
     height: fit-content;
@@ -121,7 +121,9 @@ form label {
     color: #333;
 }
 
-#namee, #email, #message {
+#namee,
+#email,
+#message {
     padding: 0.8rem;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -187,10 +189,11 @@ form button:hover {
 }
 
 footer {
-background-color: transparent;
-border-top:white solid 2px; 
+    background-color: transparent;
+    border-top: white solid 2px;
 
 }
+
 .footer-div {
     background-color: transparent;
 }
@@ -211,6 +214,7 @@ body {
     color: white;
 }
 
-html, body {
+html,
+body {
     overflow-x: hidden;
 }

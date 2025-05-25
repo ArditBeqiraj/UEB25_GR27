@@ -21,8 +21,8 @@ require_once 'partials/header.php';
       </p>
     </hgroup>
     <div style="padding-top: 1rem">
-      <button class="buy">Buy an Aircraft</button>
-      <button class="">Sell an Aircraft</button>
+      <button class="buy open-popup">Buy an Aircraft</button>
+      <button class="Sell open-popup">Sell an Aircraft</button>
     </div>
   </div>
 </header>
@@ -150,9 +150,10 @@ require_once 'partials/header.php';
         </a>
       </div>
       <div>
-        <a href=""></a>
-        <img src="img/planeTypes/telebingo.png" alt="TurboProp" />
-        <h3>TurboProp</h3>
+        <a href="">
+          <img src="img/planeTypes/telebingo.png" alt="TurboProp" />
+          <h3>TurboProp</h3>
+        </a>
       </div>
     </div>
   </section>
@@ -188,7 +189,7 @@ require_once 'partials/header.php';
       seamless and indulgent journey, allowing you to arrive refreshed,
       focused, and in absolute style.
     </p>
-    <a href="../UEB24_GR24/buy-rent/buy-rent.html">Rent in style</a>
+    <a href="buy-rent/buy-rent.html">Rent in style</a>
   </div>
 </section>
 <br />
@@ -210,7 +211,7 @@ require_once 'partials/header.php';
       room to move, making every journey as productive or restful as you
       desire.
     </p>
-    <a href="../UEB24_GR24/buy-rent/buy-rent.html">Rent in style</a>
+    <a href="buy-rent/buy-rent.html">Rent in style</a>
   </div>
 </section>
 <div class="popular">
@@ -315,27 +316,11 @@ require_once 'partials/header.php';
   </table>
 </div>
 
-<div id="footer"></div>
-
-<script>
-  $("#footer").load("footer/footer.html");
-</script>
-
-<script>
-  $("#popup").load("member/popup.html");
-</script>
+<?php include 'footer/footer.html'; ?>
 
 <script type="text/javascript" src="js/hapsiraPunes.js"></script>
 <script type="text/javascript" src="js/nav_footer.js"></script>
 <script type="text/javascript" src="js/popup.js"></script>
-<script>
-  document.querySelectorAll(".buy").forEach((button) => {
-    button.addEventListener("click", () => {
-      // Shko te site
-      window.location.href = "../UEB24_GR24/buy-rent/buy-rent.html";
-    });
-  });
-</script>
 </body>
 
 </html>

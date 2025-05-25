@@ -12,26 +12,6 @@ require_once 'partials/header.php';
 
 
 
-<div class="popup">
-    <img class="close" src="img/logo and icons/close-circle-svgrepo-com.svg" alt="close">
-
-    <div class="container">
-
-        <div class="buttons">
-            <button class="button-login" id="button-login">Log In</button>
-            <button class="button-signup" id="button-signup">Sign Up</button>
-        </div>
-
-        <div class="permbajtja">
-            <div class="log-in" id="log-in">
-
-            </div>
-            <div class="sign-up" id="sign-up">
-
-            </div>
-        </div>
-    </div>
-</div>
 
 
 <?php
@@ -77,23 +57,6 @@ $selectedRole = isset($_GET['role']) ? $_GET['role'] : '';
 </form>
 
 
-<?php
-session_start();
-
-if (isset($_GET['favorite'])) {
-    $_SESSION['favorite_member'] = $_GET['favorite'];
-}
-
-$favorite = isset($_SESSION['favorite_member']) ? $_SESSION['favorite_member'] : null;
-?>
-
-<?php if ($favorite): ?>
-    <div class="favorite-banner">
-        ⭐ Your favorite team member is: <strong><?= htmlspecialchars($favorite) ?></strong>
-    </div>
-<?php endif; ?>
-
-
 <section class="team-section">
     <h1>Meet Some Of Our Team</h1>
     <div class="team-container">
@@ -104,10 +67,8 @@ $favorite = isset($_SESSION['favorite_member']) ? $_SESSION['favorite_member'] :
                         <img src='{$details['img']}' alt='$name' class='team-photo'>
                         <h2>$name</h2>
                         <p>{$details['role']}</p>
-                       <a href='?favorite=" . urlencode($name) . "' class='favorite-btn'>⭐ Mark as Favorite</a>
                     </div>";
             }
-            
         }
         ?>
     </div>
@@ -125,29 +86,6 @@ $favorite = isset($_SESSION['favorite_member']) ? $_SESSION['favorite_member'] :
         <?php endforeach; ?>
     </div>
 </section>
-
-
-<?php
-
-$teamMottos = [
-    "Together we fly higher!",
-    "Unity is our strength!",
-    "One team, one sky.",
-    "We rise by lifting each other.",
-    "Aviation is our passion, teamwork is our power!",
-    "The sky's the limit when we're together!"
-];
-
-
-$randomMotto = $teamMottos[array_rand($teamMottos)];
-?>
-
-<section class="team-section team-motto-section">
-    <h1>Our Team Spirit</h1>
-    <p class="team-motto"><?php echo $randomMotto; ?></p>
-</section>
-
-
 
 
 <section class="team-section">
@@ -302,69 +240,7 @@ $randomMotto = $teamMottos[array_rand($teamMottos)];
     </div>
 </section>
 
-
-<?php
-
-$GLOBALS['teamAchievements'] = [
-    "John Doe won the 'Employee of the Month' award for outstanding sales performance!",
-    "The Sales team exceeded their quarterly target by 25%!",
-    "Alex Turner completed a successful test flight on the new aircraft model!",
-    "The Tech team launched a new update that improved system performance by 40%!",
-    "Sophia Wilson led a successful marketing campaign, increasing brand awareness by 30%!"
-];
-
-
-$randomAchievement = $GLOBALS['teamAchievements'][array_rand($GLOBALS['teamAchievements'])];
-?>
-
-<section class="team-achievements-section">
-    <h1>Our Recent Achievements</h1>
-    <p class="team-achievement"><?php echo $randomAchievement; ?></p>
-</section>
-
-<?php
-// --- Visit Counter ---
-if (!isset($_SESSION['visit_count'])) {
-    $_SESSION['visit_count'] = 1;
-} else {
-    $_SESSION['visit_count']++;
-}
-
-// --- Handle Name Form ---
-if (isset($_POST['username'])) {
-    $username = trim($_POST['username']);
-    setcookie('username', $username, time() + (86400 * 30)); // 30 days
-    header("Location: " . $_SERVER['PHP_SELF']);
-    exit;
-}
-
-// --- Get Username from Cookie ---
-$username = isset($_COOKIE['username']) ? $_COOKIE['username'] : null;
-?>
-
-<div class="greeting" style="text-align: center; margin: 20px; font-size: 18px;">
-    <?php if ($username): ?>
-        <h2>Welcome back, <?php echo htmlspecialchars($username); ?>!</h2>
-    <?php else: ?>
-        <form method="post" style="text-align: center; margin: 20px;">
-            <label for="username">Enter your name:</label><br>
-            <input type="text" name="username" id="username" required>
-            <button type="submit">Save</button>
-        </form>
-    <?php endif; ?>
-</div>
-
-<div class="visit-counter" style="text-align: center; margin: 10px; color: #555;">
-    <p>You have visited this page <?php echo $_SESSION['visit_count']; ?> times.</p>
-</div>
-
-
-
-<div id="footer"></div>
-
-<script type="text/javascript">
-    $('#footer').load('footer/footer.html');
-</script>
+<?php include 'footer/footer.html'; ?>
 
 <script type="text/javascript">
     $('#popup').load('member/popup.html');

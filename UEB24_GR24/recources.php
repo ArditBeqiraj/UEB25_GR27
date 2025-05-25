@@ -5,27 +5,6 @@ require_once 'partials/header.php';
 
 ?>
 
-<div class="popup">
-  <img class="close" src="img/logo and icons/close-circle-svgrepo-com.svg" alt="close">
-
-  <div class="container">
-
-    <div class="buttons">
-      <button class="button-login" id="button-login">Log In</button>
-      <button class="button-signup" id="button-signup">Sign Up</button>
-    </div>
-
-    <div class="permbajtja">
-      <div class="log-in" id="log-in">
-
-      </div>
-      <div class="sign-up" id="sign-up">
-
-      </div>
-    </div>
-  </div>
-</div>
-
 <section class="Airports-space">
   <div class="content-wrapper">
     <div class="text.container1">
@@ -50,39 +29,6 @@ require_once 'partials/header.php';
     </div>
   </div>
 
-</section>
-
-<br>
-
-
-
-<?php
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["favorite_airport"])) {
-    $_SESSION["favorite_airport"] = $_POST["favorite_airport"];
-}
-?>
-
-<section class="centered-section">
-  <h2>Your Favorite Airport 🌍</h2>
-  <form method="POST">
-    <label for="favorite_airport">Select your favorite airport:</label>
-    <select name="favorite_airport" id="favorite_airport" required>
-      <option value="" disabled selected>Choose an airport</option>
-      <option value="Dubai International (DXB)">Dubai International (DXB)</option>
-      <option value="Madrid-Barajas (MAD)">Madrid-Barajas (MAD)</option>
-      <option value="Hartsfield–Jackson Atlanta (ATL)">Hartsfield–Jackson Atlanta (ATL)</option>
-      <option value="Frankfurt Airport (FRA)">Frankfurt Airport (FRA)</option>
-      <option value="Tokyo Haneda (HND)">Tokyo Haneda (HND)</option>
-      <option value="Charles de Gaulle (CDG)">Charles de Gaulle (CDG)</option>
-    </select>
-    <button type="submit">Save Favorite</button>
-  </form>
-
-  <?php if (isset($_SESSION["favorite_airport"])): ?>
-    <p style="margin-top: 1rem; color: green;">
-      ✅ Your favorite airport is: <strong><?= htmlspecialchars($_SESSION["favorite_airport"]) ?></strong>
-    </p>
-  <?php endif; ?>
 </section>
 
 <br>
@@ -179,33 +125,6 @@ $flights = [
         echo "<pre>";
         var_dump($flights);
         echo "</pre>";
-    }
-  ?>
-</section>
-
-<br>
-
-
-<section class="centered-section">
-  <h2>Flight Code Validator</h2>
-  <form method="POST">
-    <label for="flightcode">Enter Flight Code:</label>
-    <input type="text" id="flightcode" name="flightcode" required>
-    <button type="submit">Validate</button>
-  </form>
-
-  <?php
-    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["flightcode"])) {
-        $flightCode = strtoupper(trim($_POST["flightcode"]));
-
-        echo "<p><strong>Flight code entered:</strong> " . htmlspecialchars($flightCode) . "</p>";
-
-        //Shkruaj 2-3 shkronja dhe pastaj 1-4 numra
-        if (preg_match("/^[A-Z]{2,3}\d{1,4}$/", $flightCode)) {
-            echo "<p style='color: green;'>✅ Valid flight code format.</p>";
-        } else {
-            echo "<p style='color: red;'>❌ Invalid flight code format. Use formats like 'AA123' or 'DL4567'.</p>";
-        }
     }
   ?>
 </section>
@@ -443,46 +362,6 @@ $flights = [
   </div>
 </section>
 
-<section class="centered-section">
-  <h2>Other Resources</h2>
-  <?php
-    
-    class Resource {
-        private $title;
-        private $type;
-        private $link;
-
-        public function __construct($title, $type, $link) {
-            $this->title = $title;
-            $this->type = $type;
-            $this->link = $link;
-        }
-
-        public function getFormattedResource() {
-            return "<li><strong>{$this->title}</strong> <span>({$this->type})</span> - <a href='{$this->link}' target='_blank'>Download</a></li>";
-        }
-    }
-
-    
-    $resources = [
-        new Resource("Company Handbook", "PDF", "resources/company-handbook.pdf"),
-        new Resource("Onboarding Guide", "DOCX", "resources/onboarding-guide.docx"),
-        new Resource("Sales Template", "PPTX", "resources/sales-template.pptx")
-    ];
-
- 
-    echo "<ul class='resource-list'>";
-    foreach ($resources as $resource) {
-        echo $resource->getFormattedResource();
-    }
-    echo "</ul>";
-  ?>
-</section>
-
-
-
-
-
 <div id="footer"></div>
 
 <script type="text/javascript">
@@ -492,7 +371,6 @@ $flights = [
 <script type="text/javascript">
   $('#popup').load('member/popup.html');
 </script>
-
 
 <script type="text/javascript" src="js/recources.js "></script>
 <script type="text/javascript" src="js/nav_footer.js"></script>
