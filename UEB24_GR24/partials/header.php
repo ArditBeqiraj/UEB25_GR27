@@ -8,29 +8,60 @@
   <?php if (isset($customCSS)) : ?>
     <link rel="stylesheet" type="text/css" href="<?= htmlspecialchars($customCSS) ?>">
   <?php endif; ?>
-  <link rel="stylesheet" href="footer/footer.css" />
-  <link rel="stylesheet" href="css/nav_footer.css" />
-  <link rel="stylesheet" href="member/popup.css" />
-  <script src="js/jquery-3.7.1.min.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <?php if (isset($footerCSS)) : ?>
+    <link rel="stylesheet" type="text/css" href="<?= htmlspecialchars($footerCSS) ?>">
+  <?php endif; ?>
+  <?php if (isset($navFooterCSS)) : ?>
+    <link rel="stylesheet" type="text/css" href="<?= htmlspecialchars($navFooterCSS) ?>">
+  <?php endif; ?>
+  <?php if (isset($popupCSS)) : ?>
+    <link rel="stylesheet" type="text/css" href="<?= htmlspecialchars($popupCSS) ?>">
+  <?php endif; ?>
+  <?php if (isset($fontAwesomeCSS)) : ?>
+    <link rel="stylesheet" href="<?= htmlspecialchars($fontAwesomeCSS) ?>"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <?php endif; ?>
+  <?php if (isset($jqueryJS)) : ?>
+    <script src="<?= htmlspecialchars($jqueryJS) ?>"></script>
+  <?php endif; ?>
 </head>
 
 <body>
   <nav>
     <div class="logo">
-      <a href="index.php">
-        <img src="./img/logo_and_icons/Untitled 2.svg" alt="Site logo" style="width: 15rem" />
-      </a>
+      <?php if (isset($homeLink)) : ?>
+        <a href="<?= htmlspecialchars($homeLink) ?>">
+          <?php if (isset($logoSVG)) : ?>
+            <img src="<?= htmlspecialchars($logoSVG) ?>" alt="Site logo" style="width: 15rem" />
+          <?php endif; ?>
+        </a>
+      <?php endif; ?>
     </div>
     <div class="navigation">
-      <a href="index.php" class="nav-text">Home</a>
-      <a href="about.php" class="nav-text">About</a>
-      <a href="recources.php" class="nav-text">Resources</a>
-      <a href="staff.php" class="nav-text">Staff</a>
-      <a href="contact.php" class="nav-text">Contact</a>
-      <a href="#log-in" id="log-inOrsign-up" class="nav-text open-popup">Log in/Sign up</a>
+      <?php if (isset($homeLink)) : ?>
+        <a href="<?= htmlspecialchars($homeLink) ?>" class="nav-text">Home</a>
+      <?php endif; ?>
+      <?php if (isset($aboutLink)) : ?>
+        <a href="<?= htmlspecialchars($aboutLink) ?>" class="nav-text">About</a>
+      <?php endif; ?>
+      <?php if (isset($resourcesLink)) : ?>
+        <a href="<?= htmlspecialchars($resourcesLink) ?>" class="nav-text">Resources</a>
+      <?php endif; ?>
+      <?php if (isset($staffLink)) : ?>
+        <a href="<?= htmlspecialchars($staffLink) ?>" class="nav-text">Staff</a>
+      <?php endif; ?>
+      <?php if (isset($contactLink)) : ?>
+        <a href="<?= htmlspecialchars($contactLink) ?>" class="nav-text">Contact</a>
+      <?php endif; ?>
+      <?php if (isset($loginLink)) : ?>
+        <a href="<?= htmlspecialchars($loginLink) ?>" id="log-inOrsign-up" class="nav-text open-popup">Log in/Sign up</a>
+      <?php endif; ?>
     </div>
   </nav>
-  <?php include 'member/popup.php'; ?>
+  <?php if (isset($popupPHP)) : ?>
+    <?php include htmlspecialchars($popupPHP); ?>
+  <?php endif; ?>
+</body>
+
+</html>

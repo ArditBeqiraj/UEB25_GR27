@@ -1,6 +1,21 @@
 <?php
 
 $customCSS = "css/recources.css";
+$footerCSS = 'footer/footer.css';
+$navFooterCSS = 'css/nav_footer.css';
+$popupCSS = 'member/popup.css';
+$fontAwesomeCSS = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css';
+$jqueryJS = 'js/jquery-3.7.1.min.js';
+$logoSVG = 'img/logo_and_icons/Untitled 2.svg';
+$popupPHP = 'member/popup.php';
+
+// Navigation links
+$homeLink = 'index.php';
+$aboutLink = 'about.php';
+$resourcesLink = 'recources.php';
+$staffLink = 'staff.php';
+$contactLink = 'contact.php';
+$loginLink = '#log-in';
 require_once 'partials/header.php';
 
 ?>

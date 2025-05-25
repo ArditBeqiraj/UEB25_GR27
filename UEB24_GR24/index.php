@@ -1,5 +1,20 @@
 <?php
 $customCSS = "css/airplane.css";
+$footerCSS = 'footer/footer.css';
+$navFooterCSS = 'css/nav_footer.css';
+$popupCSS = 'member/popup.css';
+$fontAwesomeCSS = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css';
+$jqueryJS = 'js/jquery-3.7.1.min.js';
+$logoSVG = 'img/logo_and_icons/Untitled 2.svg';
+$popupPHP = 'member/popup.php';
+
+// Navigation links
+$homeLink = 'index.php';
+$aboutLink = 'about.php';
+$resourcesLink = 'recources.php';
+$staffLink = 'staff.php';
+$contactLink = 'contact.php';
+$loginLink = '#log-in';
 require_once 'partials/header.php';
 ?>
 
@@ -116,7 +131,7 @@ require_once 'partials/header.php';
     <div class="plane-types">
       <h1>Explore by type</h1>
       <div>
-        <a href="Sales/Jet.html">
+        <a href="Sales/Jet.php">
           <img
             src="img/planeTypes/businessjet-gulfstream190x132.png"
             alt="Jet" />
@@ -124,19 +139,19 @@ require_once 'partials/header.php';
         </a>
       </div>
       <div>
-        <a href="Sales/Single-engine.html">
+        <a href="Sales/Single-engine.php">
           <img src="img/planeTypes/piston.svg" alt="SingleEngine" />
           <h3>Single Engine</h3>
         </a>
       </div>
       <div>
-        <a href="Sales/Multi engine.html">
+        <a href="Sales/Multi engine.php">
           <img src="img/planeTypes/image.svg" alt="Multiengine" />
           <h3>Multi-Engine</h3>
         </a>
       </div>
       <div>
-        <a href="Sales/Helicopter.html">
+        <a href="Sales/Helicopter.php">
           <img
             src="img/planeTypes/turbine_helcopter.svg"
             alt="Helicopter" />
