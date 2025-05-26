@@ -1,4 +1,21 @@
 <?php
+$customCSS = "css/about.css";
+$footerCSS = 'footer/footer.css';
+$navFooterCSS = 'css/nav_footer.css';
+$popupCSS = 'member/popup.css';
+$fontAwesomeCSS = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css';
+$jqueryJS = 'js/jquery-3.7.1.min.js';
+$logoSVG = 'img/logo_and_icons/Untitled 2.svg';
+$popupPHP = 'member/popup.php';
+
+// Navigation links
+$homeLink = 'index.php';
+$aboutLink = 'about.php';
+$resourcesLink = 'recources.php';
+$staffLink = 'staff.php';
+$contactLink = 'contact.php';
+$loginLink = '#log-in';
+require_once 'partials/header.php';
 $titulli = "Aerosales";
 define("Viti", 2025);
 
@@ -201,19 +218,6 @@ $faqBuyers = [
 </div>
 
 
-<!-- <div id="footer"></div>
-
-<script type="text/javascript">
-    $('#footer').load('footer/footer.html');
-</script>
-
-<script type="text/javascript">
-    $('#popup').load('member/popup.html');
-</script>
-
-<script type="text/javascript" src="js/about.js"></script>
-<script type="text/javascript" src="js/nav_footer.js"></script>
-<script type="text/javascript" src="js/popup.js"></script> -->
 
 <?php
 function showFaqs($faqArray)
@@ -226,12 +230,23 @@ function showFaqs($faqArray)
     }
 }
 
+$cmimi = 1500000;
+$interncaional = true;
+
+var_dump($cmimi);
+
+if ($cmimi > 1000000) {
+    echo "<p>This is a high-value aircraft.</p>";
+} else {
+    echo "<p>Affordable option!</p>";
+}
+
 ksort($faqBuyers);
 
 class Aeroplani
 {
     public $modeli;
-    protected $cmimi;
+    private $cmimi;
 
     function __construct($modeli, $cmimi)
     {
@@ -251,74 +266,13 @@ class Aeroplani
 }
 
 $jet = new Aeroplani("Gulfstream G700", 75000000);
-
-class AeroplaniLLuks extends Aeroplani
-{
-    public $opsionet;
-
-    function __construct($modeli, $cmimi, $opsionet = [])
-    {
-        parent::__construct($modeli, $cmimi);
-        $this->opsionet = $opsionet;
-    }
-
-    function displayInfo()
-{
-    echo "<div style='width: 80%; margin: 0 auto; text-align: center; padding: 2rem; background-color: #f4f4f4; border-radius: 12px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);'>";
-    
-    echo "<div style='margin-bottom: 2rem;'>";
-    echo "<p style='font-size: 1.1rem; margin: 0.5rem 0;'><strong>Model:</strong> $this->modeli</p>";
-    if ($this->cmimi < 10000000) {
-    echo "<p style='font-size: 1.1rem; margin: 0.5rem 0;'><strong>Price:</strong> {$this->getCmimi()} EURO</p>";
-    } else {
-    echo "<p style='font-size: 1.1rem; margin: 0.5rem 0;'><strong>Price: Negotiable</strong></p>";
-    }
-
-    if (!empty($this->opsionet)) {
-        echo "<p style='font-size: 1.1rem; margin: 0.5rem 0;'><strong>Options:</strong></p>";
-        echo "<ul style='list-style-type: disc; text-align: left; display: inline-block; padding-left: 1.5rem;'>";
-        foreach ($this->opsionet as $opsion) {
-            echo "<li style='margin-bottom: 0.5rem;'>$opsion</li>";
-        }
-        echo "</ul>";
-    }
-    echo "</div>";
-
-    echo "<div>";
-    echo "<img src='./img/about/bombardier.webp' alt='Luxury Jet' style='max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);'>";
-    echo "</div>";
-
-    echo "</div>";
-
-}
-
-}
+echo "<p>Modeli: {$jet->modeli}, Cmimi: {$jet->getCmimi()} EURO</p>";
 
 
-$jet = new Aeroplani("Gulfstream G700", 75000000);
-
-$Lluks = new AeroplaniLluks(
-    "Bombardier Global 7500",
-    72000000,
-    ["Wi-Fi", "Private Suite", "Luxury Interior", "High-Speed Connectivity"]
-);
-
-
-$Lluks->displayInfo();
-
-$customCSS = "css/about.css";
-require_once 'partials/header.php';
 ?>
 
-<div id="footer"></div>
 
-<script type="text/javascript">
-    $('#footer').load('footer/footer.html');
-</script>
-
-<script type="text/javascript">
-    $('#popup').load('member/popup.html');
-</script>
+<?php include 'footer/footer.html'; ?>
 
 <script type="text/javascript" src="js/about.js"></script>
 <script type="text/javascript" src="js/nav_footer.js"></script>

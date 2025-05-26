@@ -1,0 +1,296 @@
+[
+    {
+        "id": "airbusAS355NP",
+        "title": "N117 - 2014 AIRBUS AS355NP",
+        "type": "Helicopter",
+        "name": "Airbus AS355NP",
+        "key_features": {
+            "Year": "2014",
+            "Manufacturer": "Airbus Helicopters",
+            "Condition": "Used",
+            "Total Time": "1,200 hours",
+            "Engine Maintenance Program": "Twin Turbomeca Arrius 1A engines with full service records",
+            "Exterior Notes": "Sleek white and blue livery with modern Airbus branding",
+            "Avionics/Radios": "Garmin G500H glass cockpit with autopilot and enhanced navigation systems",
+            "Safety": "Dual-engine configuration with FADEC and advanced autopilot for operational reliability"
+        },
+        "more_info": {
+            "Performance": [
+                "Maximum Cruise Speed: 140 knots",
+                "Maximum Range: 450 nautical miles",
+                "Service Ceiling: 20,000 feet"
+            ],
+            "Interior Features": [
+                "Seating for up to 6 passengers with panoramic windows",
+                "Premium leather seats with soundproof cabin design",
+                "USB charging ports for passengers",
+                "Optional cargo pod for extended utility"
+            ],
+            "Exterior Details": [
+                "Modern white and blue livery",
+                "LED navigation and landing lights",
+                "Tail rotor with noise reduction technology"
+            ],
+            "Safety and Reliability": [
+                "FADEC-equipped twin engines for optimal safety",
+                "Enhanced autopilot and stability systems",
+                "Emergency flotation gear ready"
+            ],
+            "Maintenance Highlights": [
+                "Comprehensive service records available",
+                "Recently inspected under Airbus standards",
+                "Always hangared for excellent condition"
+            ],
+            "Special Features": [
+                "Dual-engine configuration for redundancy",
+                "Low-noise design for urban operations",
+                "Highly versatile for business, tourism, and utility missions"
+            ]
+        },
+        "images": {
+            "main": "../img/plane-images/airbus/airbus.webp",
+            "thumbnails": [
+                "../img/plane-images/airbus/airbus1.webp",
+                "../img/plane-images/airbus/airbus2.webp",
+                "../img/plane-images/airbus/airbus3.webp",
+                "../img/plane-images/airbus/airbus4.webp"
+            ]
+        }
+    },
+    {
+        "id": "learjet",
+        "title": "XA-RSC - 2015 LEARJET 75",
+        "type": "Jet",
+        "name": "Learjet 75",
+        "key_features": {
+            "Year": "2015",
+            "Manufacturer": "Learjet",
+            "Condition": "Used",
+            "Total Time": "1550 hours",
+            "Engine Maintenance Program": "MSP Gold",
+            "Exterior Notes": "Matterhorn white w/silver, gray, orange & blue",
+            "Avionics/Radios": "Garmin G5000 Avionics System",
+            "Safety": "Equipped with state-of-the-art avionics and safety systems, ensuring the highest standards of flight safety"
+        },
+        "more_info": {
+            "Performance": [
+                "Maximum Cruise Speed: 500 knots",
+                "Maximum Range: 6,500 nautical miles",
+                "Maximum Altitude: 51,000 feet",
+                "Takeoff Distance: 5,250 feet",
+                "Landing Distance: 3,100 feet"
+            ],
+            "Interior Features": [
+                "Spacious cabin with three distinct zones",
+                "Seating for up to 14 passengers with a conference area",
+                "Fully reclining seats and divan convertible to beds",
+                "State-of-the-art entertainment system with satellite TV and DVD",
+                "Dual forward and aft lavatories",
+                "Fully equipped galley with oven, microwave, coffee maker, and ample storage"
+            ],
+            "Exterior Details": [
+                "Matterhorn white with silver and gray accents",
+                "LED exterior lighting for better visibility",
+                "High-gloss paint finish, well-maintained to preserve aesthetics",
+                "Polished brightwork and enhanced aerodynamic design"
+            ],
+            "Avionics": [
+                "Honeywell SPZ-8500 Integrated Avionics Suite",
+                "Dual Flight Management Systems (FMS)",
+                "Enhanced Vision System (EVS) and Synthetic Vision System (SVS)",
+                "TCAS II, EGPWS, and ADS-B Out compliance",
+                "Dual autopilot for redundancy and safety"
+            ],
+            "Special Features": [
+                "Quiet cabin design with advanced soundproofing",
+                "In-flight accessible baggage compartment",
+                "Noise-compliant engines for urban airport operations",
+                "High-speed internet and satellite communication capabilities"
+            ]
+        },
+        "images": {
+            "main": "../img/plane-images/Learjet 75/2015 LEARJET 75.webp",
+            "thumbnails": [
+                "../img/plane-images/Learjet 75/learjet1.webp",
+                "../img/plane-images/Learjet 75/learjet2.webp",
+                "../img/plane-images/Learjet 75/learjet3.webp",
+                "../img/plane-images/Learjet 75/learjet4.webp"
+            ]
+        }
+    },
+    {
+        "id": "gulfstream",
+        "title": "2000 GULFSTREAM GV",
+        "type": "Jet",
+        "name": "Gulfstream GV",
+        "key_features": {
+            "Year": "2000",
+            "Manufacturer": "Gulfstream",
+            "Condition": "Used",
+            "Total Time": "8,750 hours",
+            "Engine Maintenance Program": "Rolls-Royce Corporate Care",
+            "Exterior Notes": "Overall Matterhorn white with silver and gray accent stripes",
+            "Avionics/Radios": "Honeywell SPZ-8500 Avionics Suite",
+            "Safety": "Equipped with advanced avionics, TCAS II, and Enhanced Ground Proximity Warning Systems (EGPWS) for maximum safety"
+        },
+        "more_info": {
+            "Performance": [
+                "Maximum Cruise Speed: 500 knots",
+                "Maximum Range: 6,500 nautical miles",
+                "Maximum Altitude: 51,000 feet"
+            ],
+            "Interior Features": [
+                "Luxurious seating for up to 14 passengers",
+                "Fully equipped forward and aft lavatories",
+                "Advanced entertainment system with satellite TV and individual screens",
+                "Fully reclining seats that convert into beds for long-haul comfort",
+                "High-speed Wi-Fi and satellite phone connectivity"
+            ],
+            "Exterior Details": [
+                "Matterhorn white with silver and gray accents",
+                "LED lighting and polished brightwork",
+                "High-gloss paint finish for an elegant appearance"
+            ],
+            "Safety and Reliability": [
+                "Equipped with TCAS II and EGPWS for enhanced situational awareness",
+                "Redundant flight systems for operational safety",
+                "Advanced autopilot and weather radar systems"
+            ],
+            "Maintenance Highlights": [
+                "Complete and up-to-date maintenance logs",
+                "Recently overhauled engines under Rolls-Royce Corporate Care",
+                "Always hangared, ensuring excellent condition"
+            ],
+            "Special Features": [
+                "Fully equipped galley with microwave and coffee maker",
+                "Noise-compliant design for quiet cabin operation",
+                "Extended baggage space with in-flight access"
+            ]
+        },
+        "images": {
+            "main": "../img/plane-images/gulfstream gv/N1120G - 2000 GULFSTREAM GV.webp",
+            "thumbnails": [
+                "../img/plane-images/gulfstream gv/gulfstream1.webp",
+                "../img/plane-images/gulfstream gv/gulfstream2.webp",
+                "../img/plane-images/gulfstream gv/gulfstream3.webp",
+                "../img/plane-images/gulfstream gv/gulfstream4.jpg"
+            ]
+        }
+    },
+    {
+        "id": "beechcraft58",
+        "title": "N98765 - 1974 BEECHCRAFT 58",
+        "type": "Multi-Engine",
+        "name": "Beechcraft 58",
+        "key_features": {
+            "Year": "1974",
+            "Manufacturer": "Beechcraft",
+            "Condition": "Used",
+            "Total Time": "3,200 hours",
+            "Engine Maintenance Program": "Twin Continental IO-520 engines with recent overhauls",
+            "Exterior Notes": "Blue and white paint scheme with silver accents",
+            "Avionics/Radios": "Garmin G500 avionics suite with autopilot and weather radar",
+            "Safety": "Equipped with dual alternators, advanced weather radar, and Garmin traffic systems for optimal safety"
+        },
+        "more_info": {
+            "Performance": [
+                "Maximum Cruise Speed: 200 knots",
+                "Maximum Range: 1,000 nautical miles",
+                "Service Ceiling: 20,000 feet"
+            ],
+            "Interior Features": [
+                "Seating for up to 6 passengers",
+                "Refurbished leather interior with club seating arrangement",
+                "Fold-out work tables for convenience",
+                "Dual USB ports and charging stations"
+            ],
+            "Exterior Details": [
+                "Blue and white paint scheme with silver accents",
+                "LED landing and taxi lights",
+                "Custom Beechcraft branding on tail and wingtips"
+            ],
+            "Safety and Reliability": [
+                "Redundant electrical and fuel systems",
+                "Advanced autopilot for enhanced operational safety",
+                "Garmin weather radar for situational awareness"
+            ],
+            "Maintenance Highlights": [
+                "Full maintenance logs available",
+                "Engines and propellers recently overhauled",
+                "Always hangared to maintain pristine condition"
+            ],
+            "Special Features": [
+                "High-performance twin-engine design",
+                "Ample luggage storage with accessible in-flight compartments",
+                "Ideal for both business and personal travel"
+            ]
+        },
+        "images": {
+            "main": "../img/plane-images/beechcraft 58/beechcraft.webp",
+            "thumbnails": [
+                "../img/plane-images/beechcraft 58/beechcraft1.webp",
+                "../img/plane-images/beechcraft 58/beechcraft2.webp",
+                "../img/plane-images/beechcraft 58/beechcraft3.jpg",
+                "../img/plane-images/beechcraft 58/beechcraft4.webp"
+            ]
+        }
+    },
+    {
+        "id": "cessna180",
+        "title": "N12345 - 1959 CESSNA 180",
+        "type": "Single engine",
+        "name": "Cessna 180",
+        "key_features": {
+            "Year": "1959",
+            "Manufacturer": "Cessna",
+            "Condition": "Used",
+            "Total Time": "4,500 hours",
+            "Engine Maintenance Program": "Recently overhauled Continental O-470 engine",
+            "Exterior Notes": "Traditional red and white paint scheme with polished accents",
+            "Avionics/Radios": "Garmin G5 avionics with updated communications and navigation systems",
+            "Safety": "Equipped with modern avionics and backup instruments, ensuring safe and reliable operations"
+        },
+        "more_info": {
+            "Performance": [
+                "Maximum Cruise Speed: 142 knots",
+                "Maximum Range: 720 nautical miles",
+                "Service Ceiling: 17,700 feet"
+            ],
+            "Interior Features": [
+                "Comfortable seating for up to 4 passengers",
+                "Classic leather upholstery with custom stitching",
+                "Optional rear-seat removal for additional cargo space",
+                "USB ports for charging devices in-flight"
+            ],
+            "Exterior Details": [
+                "Classic red and white paint scheme",
+                "LED landing and navigation lights",
+                "Well-maintained polished aluminum accents"
+            ],
+            "Safety and Reliability": [
+                "Modern avionics for situational awareness",
+                "Backup manual instruments",
+                "Upgraded fuel system for improved reliability"
+            ],
+            "Maintenance Highlights": [
+                "Complete maintenance history available",
+                "Recently overhauled engine and propeller",
+                "Always hangared, ensuring excellent condition"
+            ],
+            "Special Features": [
+                "Floatplane conversion-ready",
+                "Large cargo doors for easier loading",
+                "Tailwheel design for off-runway capabilities"
+            ]
+        },
+        "images": {
+            "main": "../img/plane-images/cessna/cessna.jpg",
+            "thumbnails": [
+                "../img/plane-images/cessna/cessna1.jpg",
+                "../img/plane-images/cessna/cessna2.jpg",
+                "../img/plane-images/cessna/cessna3.webp",
+                "../img/plane-images/cessna/cessna4.webp"
+            ]
+        }
+    }
+]
