@@ -48,7 +48,7 @@ Aerosales is a web-based marketplace where users can **buy**, **sell**, and **re
 - Albion Hajzeraj
 - Bledion Zymberi
 
-- <a href="https://github.com/ArditBeqiraj/UEB25_GR27/graphs/contributors">
+  <a href="https://github.com/ArditBeqiraj/UEB25_GR27/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=ArditBeqiraj/UEB25_GR27" />
 </a>
 
