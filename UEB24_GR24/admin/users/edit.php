@@ -1,155 +1,128 @@
- <?php
-
+<?php
 require "../db.php";
 
-$sql = "SELECT id, name, surname, email, role FROM users";
+
+// Kqyre nese eshte dhene id, dhe nese id e dhene eshte numer
+if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
+    die("ID jo valid!");
+}
+
+// valido id permes ketij funksioni
+$id = $_GET['id'];
+$id = mysqli_real_escape_string($conn, $id);
+
+
+$sql = "SELECT id, name, surname, username, email, role FROM users WHERE id = $id";
 $result = $conn->query($sql);
 
+if (!$result || $result->num_rows === 0) {
+    die("Përdoruesi nuk u gjet!");
+}
+
+$row = $result->fetch_assoc();
+
+if (!$row) {
+    header("Location: index.php");
+    exit();
+}
+
+// Përpunimi i formës
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    $name = trim($_POST["name"]);
+    $surname = trim($_POST["surname"]);
+    $username = trim($_POST["username"]);
+    $role = trim($_POST["role"]);
+    $email = trim($_POST["email"]);
+    $password = trim($_POST["password"]);
+
+    if (empty($name) || empty($surname) || empty($username) || empty($role) || empty($email)) {
+        $error = "Të gjitha fushat (përveç fjalëkalimit) janë të detyrueshme!";
+    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $error = "Email jo valid!";
+    } else {
+        if (!empty($password)) {
+            // Nëse ka fjalëkalim të ri
+            $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+            $sql = "UPDATE users SET name=?, surname=?, username=?, role=?, email=?, password=? WHERE id=?";
+            $stmt = $conn->prepare($sql);
+            $stmt->bind_param("ssssssi", $name, $surname, $username, $role, $email, $hashed_password, $id);
+        } else {
+            // Pa ndryshuar fjalëkalimin
+            $sql = "UPDATE users SET name=?, surname=?, username=?, role=?, email=? WHERE id=?";
+            $stmt = $conn->prepare($sql);
+            $stmt->bind_param("sssssi", $name, $surname, $username, $role, $email, $id);
+        }
 
 
-
+        if ($stmt->execute()) {
+            $success = "Përdoruesi u përditësua me sukses!";
+            $sql = "SELECT id, name, surname, username, email, role FROM users WHERE id = ?";
+            $stmt = $conn->prepare($sql);
+            $stmt->bind_param("i", $id);
+            $stmt->execute();
+            $result = $stmt->get_result();
+            $row = $result->fetch_assoc();
+        } else {
+            $error = "Gabim gjatë përditësimit: " . $conn->error;
+        }
+    }
+}
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sq">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Menaxhimi i Përdoruesve</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', sans-serif;
-            background-color: #f5f5f5;
-            margin: 0;
-            padding: 20px;
-        }
-
-        .container {
-            max-width: 900px;
-            margin: auto;
-            background: #fff;
-            padding: 20px;
-            border-radius: 12px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-        }
-
-        h1 {
-            text-align: center;
-            color: #333;
-        }
-
-        .add-user-btn {
-            display: inline-block;
-            padding: 10px 16px;
-            background-color: #007bff;
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            margin-bottom: 20px;
-        }
-
-        .add-user-btn:hover {
-            background-color: #0056b3;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 10px;
-        }
-
-        th,
-        td {
-            padding: 12px;
-            text-align: left;
-            border-bottom: 1px solid #ddd;
-        }
-
-        th {
-            background-color: #f0f0f0;
-        }
-
-        .actions button {
-            padding: 6px 12px;
-            margin-right: 5px;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-        }
-
-        .edit-btn {
-            background-color: #28a745;
-            color: white;
-        }
-
-        .delete-btn {
-            background-color: #dc3545;
-            color: white;
-        }
-
-        .edit-btn:hover {
-            background-color: #218838;
-        }
-
-        a {
-            text-decoration: none;
-            color: white;
-        }
-
-        .delete-btn:hover {
-            background-color: #c82333;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ndrysho Përdoruesin</title>
+    <link rel="stylesheet" href="assets/style.css">
 </head>
 
 <body>
-    <div class="container">
-        <h1>Menaxhimi i Përdoruesve</h1>
-        <a href="./create.php" class="add-user-btn">+ Shto Përdorues</a>
+    <div class="form-container">
+        <h2>Ndrysho përdoruesin</h2>
 
-        <table>
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Emri</th>
-                    <th>Email</th>
-                    <th>Roli</th>
-                    <th>Veprime</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php
-                if ($result->num_rows > 0) {
-                    //shkon ne qdo rresht te databazes dhe i shfaq ketu
-                    while ($row = $result->fetch_assoc()) {
-                        echo "<tr>";
-                        echo "<td>" . htmlspecialchars($row['id']) . "</td>";
-                        echo "<td>" . htmlspecialchars($row['name']) . " " . htmlspecialchars($row['surname']) . "</td>";
-                        echo "<td>" . htmlspecialchars($row['email']) . "</td>";
-                        echo "<td>" . htmlspecialchars($row['role']) . "</td>";
 
-                ?>
+        <form action="edit.php?id=<?php echo $id; ?>" method="POST">
+            <div class="form-group">
+                <label for="name">Emri</label>
+                <input type="text" id="name" name="name" value="<?php echo htmlspecialchars($row['name']); ?>" required>
+            </div>
 
-                        <td class="actions">
-                            <button class="edit-btn">
+            <div class="form-group">
+                <label for="surname">Mbiemri</label>
+                <input type="text" id="surname" name="surname" value="<?php echo htmlspecialchars($row['surname']); ?>" required>
+            </div>
 
-                                <a href="edit.php?id=<?= htmlspecialchars($row['id']); ?>">Edit</a>
-                            </button>
-                            <button class="delete-btn">
-                                <a href="delete.php?id=<?= htmlspecialchars($row['id']); ?>">Delete</a>
-                            </button>
-                        </td>
-                        </tr>
-                <?php
-                    }
-                }
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" value="<?php echo htmlspecialchars($row['username']); ?>" required>
+            </div>
 
-                ?>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" value="<?php echo htmlspecialchars($row['email']); ?>" required>
+            </div>
 
-            </tbody>
-        </table>
+            <div class="form-group">
+                <label for="role">Roli</label>
+                <select id="role" name="role" required>
+                    <option value="client" <?php echo ($row['role'] == 'client') ? 'selected' : ''; ?>>Client</option>
+                    <option value="admin" <?php echo ($row['role'] == 'admin') ? 'selected' : ''; ?>>Admin</option>
+                    <option value="editor" <?php echo ($row['role'] == 'editor') ? 'selected' : ''; ?>>Editor</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Fjalëkalimi i ri (lëreni bosh për të mos e ndryshuar)</label>
+                <input type="password" id="password" name="password">
+                <small>Lëreni bosh nëse nuk doni të ndryshoni fjalëkalimin</small>
+            </div>
+
+            <button type="submit" class="btn">Ruaj Ndryshimet</button>
+        </form>
     </div>
 </body>
 
-</html>  
+</html>

@@ -72,12 +72,21 @@
         border-bottom: 2px rgba(0, 0, 0, 0.2) solid;
     }
 
+    .hero button a{
+        color: #597F97;
+        text-decoration: none;
+    }
+
     .hero button:hover {
         box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
         background-color: #597F97;
         color: white;
         transition: 0.5s;
 
+    }
+
+    .hero button:hover a{
+        color: white;
     }
 
 

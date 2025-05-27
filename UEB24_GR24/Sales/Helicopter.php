@@ -101,7 +101,6 @@ require_once '../partials/header.php';
 
             <div class="more-info">
                 <button class="button1 height">View Height</button>
-                <button class="button1 forma" data-type="<?php echo htmlspecialchars($aircraft['type']); ?>" data-name="<?php echo htmlspecialchars($aircraft['name']); ?>">Buy / Rent</button>
             </div>
         </div>
     </section>
@@ -112,15 +111,6 @@ require_once '../partials/header.php';
     <script src="../js/popup.js"></script>
     <script src="../js/Sales.js"></script>
     <script>
-        document.querySelectorAll(".forma").forEach(button => {
-            button.addEventListener("click", () => {
-                const selectedType = button.getAttribute("data-type");
-                const selectedName = button.getAttribute("data-name");
-                localStorage.setItem("selectedType", selectedType);
-                localStorage.setItem("selectedName", selectedName);
-                window.location.href = "../buy-rent/buy-rent.html";
-            });
-        });
         document.querySelectorAll(".height").forEach(button => {
             button.addEventListener("click", () => {
                 window.location.href = "../height.html";

@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-  <!-- Other head content -->
   <style>
     .no-focus-outline:focus {
       outline: none;

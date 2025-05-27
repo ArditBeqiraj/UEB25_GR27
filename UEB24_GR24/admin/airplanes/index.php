@@ -1,22 +1,18 @@
- <?php
+<?php
 
 require "../db.php";
 
-$sql = "SELECT id, name, surname, email, role FROM users";
+$sql = "SELECT * FROM airplanes";
 $result = $conn->query($sql);
-
-
-
 
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sq">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Menaxhimi i Përdoruesve</title>
+    <meta charset="UTF-8">
+    <title>Menaxho Aeroplanët</title>
     <style>
         body {
             font-family: 'Segoe UI', sans-serif;
@@ -26,7 +22,7 @@ $result = $conn->query($sql);
         }
 
         .container {
-            max-width: 900px;
+            max-width: 1000px;
             margin: auto;
             background: #fff;
             padding: 20px;
@@ -39,18 +35,30 @@ $result = $conn->query($sql);
             color: #333;
         }
 
-        .add-user-btn {
+        .add-plane-btn {
             display: inline-block;
             padding: 10px 16px;
-            background-color: #007bff;
+            background-color: #28a745;
             color: white;
             text-decoration: none;
             border-radius: 8px;
             margin-bottom: 20px;
         }
 
-        .add-user-btn:hover {
-            background-color: #0056b3;
+        .add-plane-btn:hover {
+            background-color: #218838;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 30px;
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
         }
 
         table {
@@ -62,12 +70,18 @@ $result = $conn->query($sql);
         th,
         td {
             padding: 12px;
-            text-align: left;
+            text-align: center;
             border-bottom: 1px solid #ddd;
         }
 
         th {
             background-color: #f0f0f0;
+        }
+
+        img {
+            width: 100px;
+            height: auto;
+            border-radius: 6px;
         }
 
         .actions button {
@@ -78,78 +92,73 @@ $result = $conn->query($sql);
             cursor: pointer;
         }
 
-        .edit-btn {
-            background-color: #28a745;
+        .edit {
+            background-color: #ffc107;
             color: white;
         }
 
-        .delete-btn {
+        .delete {
             background-color: #dc3545;
             color: white;
         }
 
-        .edit-btn:hover {
-            background-color: #218838;
+        .edit:hover {
+            background-color: #e0a800;
         }
 
-        a {
+        .delete:hover {
+            background-color: #c82333;
+        }
+
+        .actions a {
             text-decoration: none;
             color: white;
-        }
-
-        .delete-btn:hover {
-            background-color: #c82333;
         }
     </style>
 </head>
 
 <body>
     <div class="container">
-        <h1>Menaxhimi i Përdoruesve</h1>
-        <a href="./create.php" class="add-user-btn">+ Shto Përdorues</a>
+        <h1>Menaxho Aeroplanët</h1>
+
+        <a href="create.php" class="add-plane-btn">+ Shto Aeroplan</a>
 
         <table>
             <thead>
                 <tr>
                     <th>ID</th>
+                    <th>Foto</th>
                     <th>Emri</th>
-                    <th>Email</th>
-                    <th>Roli</th>
-                    <th>Veprime</th>
+                    <th>Përshkrimi</th>
+                    <th>Çmimi (€)</th>
+                    <th>Për Shitje?</th>
+                    <th>Veprimet</th>
                 </tr>
             </thead>
             <tbody>
                 <?php
                 if ($result->num_rows > 0) {
-                    //shkon ne qdo rresht te databazes dhe i shfaq ketu
                     while ($row = $result->fetch_assoc()) {
                         echo "<tr>";
                         echo "<td>" . htmlspecialchars($row['id']) . "</td>";
-                        echo "<td>" . htmlspecialchars($row['name']) . " " . htmlspecialchars($row['surname']) . "</td>";
-                        echo "<td>" . htmlspecialchars($row['email']) . "</td>";
-                        echo "<td>" . htmlspecialchars($row['role']) . "</td>";
-
-                ?>
-
-                        <td class="actions">
-                            <button class="edit-btn">
-
-                                <a href="edit.php?id=<?= htmlspecialchars($row['id']); ?>">Edit</a>
-                            </button>
-                            <button class="delete-btn">
-                                <a href="delete.php?id=<?= htmlspecialchars($row['id']); ?>">Delete</a>
-                            </button>
-                        </td>
-                        </tr>
-                <?php
+                        echo '<td><img src="assetes/images/' . htmlspecialchars($row['image_url']) . '" alt="Foto Aeroplani"></td>';
+                        echo "<td>" . htmlspecialchars($row['name']) . "</td>";
+                        echo "<td>" . htmlspecialchars($row['description']) . "</td>";
+                        echo "<td>" . htmlspecialchars($row['price']) . "</td>";
+                        echo "<td>" . ($row['is_for_rent'] == 0 ? "Rent" : "Sale") . "</td>";
+                        echo '<td class="actions">
+                                <button class="edit"><a href="edit.php?id=' . htmlspecialchars($row['id']) . '">Edit</a></button>
+                                <button class="delete"><a href="delete.php?id=' . htmlspecialchars($row['id']) . '">Delete</a></button>
+                              </td>';
+                        echo "</tr>";
                     }
                 }
-
                 ?>
-
             </tbody>
         </table>
+
+        <a href="../dashboard.php" class="back-link">&larr; Kthehu në Dashboard</a>
     </div>
 </body>
 
-</html>  
+</html>

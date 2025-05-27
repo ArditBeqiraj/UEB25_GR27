@@ -66,7 +66,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     if (mysqli_query($conn, $sql)) {
        
         header("Location: ../index.php#log-in");
-        exit(); 
+        
     } else {
         echo "Gabim: " . mysqli_error($conn);
     }

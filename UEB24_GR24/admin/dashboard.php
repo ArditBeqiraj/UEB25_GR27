@@ -5,7 +5,28 @@ include("db.php");
 include("functions.php");
 require 'auth.php';
 
-// $user_data = check_login($conn);
+$user_query = "SELECT COUNT(*) AS total_users FROM users";
+$result = $conn->query($user_query);
+$row = $result->fetch_assoc();
+$total_user = $row['total_users'];
+
+$user_query = "SELECT COUNT(*) AS total_planes FROM airplanes";
+$result = $conn->query($user_query);
+$row = $result->fetch_assoc();
+$total_planes = $row['total_planes'];
+
+$today = date('Y-m-d');
+$sql = "SELECT COUNT(*) AS total_rents FROM rent WHERE start_date <= '$today' AND end_date >= '$today'";
+$result_rent = mysqli_query($conn, $sql);
+$row = mysqli_fetch_assoc($result_rent);
+$totalRents = $row['total_rents'];
+
+$sql = "SELECT name, price FROM airplanes ORDER BY id DESC LIMIT 3";
+$result_plane = mysqli_query($conn, $sql);
+
+$sql = "SELECT email FROM users WHERE role = 'client' LIMIT 3";
+$result_user = mysqli_query($conn, $sql);
+
 ?>
 
 <!DOCTYPE html>
@@ -59,15 +80,14 @@ require 'auth.php';
         <div class="row">
             <!-- Sidebar -->
             <nav class="col-md-2 sidebar d-flex flex-column">
-                <h4 class="text-center my-4">🛠 Admin Panel</h4>
-                <a href="#">Dashboard</a>
-                <a href="#">Manage Users</a>
-                <a href="#">Manage Planes</a>
-                <a href="#">Rentals Overview</a>
-                <a href="#">Sales Overview</a>
-                <a href="#">Messages</a>
-                <a href="#">Settings</a>
-                <a href="#">Logout</a>
+                <h4 class="text-center my-4">AeroSales</h4>
+                <a href="dashboard.php">Dashboard</a>
+                <a href="./users/index.php">Manage Users</a>
+                <a href="./airplanes/index.php">Manage Planes</a>
+                <a href="./rental/index.php">Rentals Overview</a>
+                <a href="./sales/index.php">Sales Overview</a>
+                <a href="./buy/index.php">Buy Overview</a>
+                <a href="./logout.php">Logout</a>
             </nav>
 
             <!-- Main Content -->
@@ -83,7 +103,7 @@ require 'auth.php';
                         <div class="card text-bg-primary">
                             <div class="card-body">
                                 <h5 class="card-title">Total Users</h5>
-                                <p class="card-text">120</p>
+                                <p class="card-text"><?= $total_user ?></p>
                             </div>
                         </div>
                     </div>
@@ -91,7 +111,7 @@ require 'auth.php';
                         <div class="card text-bg-success">
                             <div class="card-body">
                                 <h5 class="card-title">Planes Listed</h5>
-                                <p class="card-text">54</p>
+                                <p class="card-text"><?= $total_planes ?></p>
                             </div>
                         </div>
                     </div>
@@ -99,7 +119,8 @@ require 'auth.php';
                         <div class="card text-bg-warning">
                             <div class="card-body">
                                 <h5 class="card-title">Active Rentals</h5>
-                                <p class="card-text">23</p>
+
+                                <p class="card-text"><?= $totalRents ?></p>
                             </div>
                         </div>
                     </div>
@@ -120,9 +141,9 @@ require 'auth.php';
                             <div class="card-body">
                                 <h5 class="card-title">Recent User Signups</h5>
                                 <ul class="list-group">
-                                    <li class="list-group-item">user1@example.com</li>
-                                    <li class="list-group-item">pilot2@example.com</li>
-                                    <li class="list-group-item">owner3@example.com</li>
+                                    <?php while ($row = mysqli_fetch_assoc($result_user)) : ?>
+                                        <li class="list-group-item"><?= htmlspecialchars($row['email']); ?></li>
+                                    <?php endwhile; ?>
                                 </ul>
                             </div>
                         </div>
@@ -132,9 +153,11 @@ require 'auth.php';
                             <div class="card-body">
                                 <h5 class="card-title">Latest Plane Listings</h5>
                                 <ul class="list-group">
-                                    <li class="list-group-item">Cessna 172 | €80,000</li>
-                                    <li class="list-group-item">Boeing 747 | €3,000,000</li>
-                                    <li class="list-group-item">Embraer Phenom 300 | €2,500,000</li>
+                                    <?php while ($row = mysqli_fetch_assoc($result_plane)) : ?>
+                                        <li class="list-group-item">
+                                            <?= htmlspecialchars($row['name']) ?> | €<?= number_format($row['price'], 2) ?>
+                                        </li>
+                                    <?php endwhile; ?>
                                 </ul>
                             </div>
                         </div>

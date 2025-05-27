@@ -36,47 +36,13 @@ require_once 'partials/header.php';
       </p>
     </hgroup>
     <div style="padding-top: 1rem">
-      <button class="buy open-popup">Buy an Aircraft</button>
-      <button class="Sell open-popup">Sell an Aircraft</button>
+<div style="padding-top: 1rem">
+      <button class="buy open-popup" onclick="alert('You must be logged in to perform this operation.')">Buy an Aircraft</button>
+      <button class="Sell open-popup" onclick="alert('You must be logged in to perform this operation.')">Sell an Aircraft</button>
+    </div>
     </div>
   </div>
 </header>
-
-<div class="search-bar">
-  <h2>Find your Aircraft</h2>
-  <form method="post" action="index.php">
-    <div class="search">
-      <label for="query">Search</label>
-      <input
-        type="text"
-        name="query"
-        id="query"
-        style="max-height: fit-content; background-color: #f1f0e8"
-        autocomplete="off" />
-      <hr />
-    </div>
-    <select
-      name="category"
-      style="max-height: fit-content; background-color: #f1f0e8">
-      <option value="all">All Categories</option>
-      <option value="sale">For Sale</option>
-      <option value="rent">For Rent</option>
-      <option value="trade">For Trade</option>
-    </select>
-    <div class="slider">
-      <label for="slider" style="text-align: start">Price range: </label>
-      <span id="rangeValue" style="text-align: start">1000000</span>
-      <input
-        id="slider"
-        type="range"
-        min="0"
-        max="50000000"
-        value="1000000"
-        step="25000" />
-    </div>
-    <button type="submit" style="max-height: fit-content">Search</button>
-  </form>
-</div>
 
 <div class="showcase">
   <div class="imagecontainer">
@@ -126,6 +92,7 @@ require_once 'partials/header.php';
     </a>
   </div>
 </div>
+
 <section class="planetypes-slideshow">
   <section class="planetypes-slideshow-1">
     <div class="plane-types">

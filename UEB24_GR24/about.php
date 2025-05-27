@@ -200,7 +200,7 @@ $faqBuyers = [
                     </p>
                 </div>
             </div>
-            <div class="faq-item">
+            <div class="faq-item" >
                 <button class="faq-question-renters" id="faq-question">What documents are required to rent an airplane?</button>
                 <div class="faq-answer">
                     <h4>To rent an airplane, you may need to provide:</h4>
@@ -233,15 +233,19 @@ function showFaqs($faqArray)
 $cmimi = 1500000;
 $interncaional = true;
 
+// Wrap var_dump output in a styled <pre> tag to control color
+ob_start();
 var_dump($cmimi);
+$dumped = ob_get_clean();
+echo '<pre style="color: white;">' . htmlspecialchars($dumped) . '</pre>';
 
 if ($cmimi > 1000000) {
-    echo "<p>This is a high-value aircraft.</p>";
+    echo '<p style="color: white;">This is a high-value aircraft.</p>';
 } else {
-    echo "<p>Affordable option!</p>";
+    echo '<p style="color: white;">Affordable option!</p>';
 }
 
-ksort($faqBuyers);
+ksort($faqBuyers); // Note: $faqBuyers must be defined elsewhere for this to work
 
 class Aeroplani
 {
@@ -266,9 +270,7 @@ class Aeroplani
 }
 
 $jet = new Aeroplani("Gulfstream G700", 75000000);
-echo "<p>Modeli: {$jet->modeli}, Cmimi: {$jet->getCmimi()} EURO</p>";
-
-
+echo '<p style="color: white;">Modeli: ' . htmlspecialchars($jet->modeli) . ', Cmimi: ' . number_format($jet->getCmimi(), 2) . ' EURO</p>';
 ?>
 
 

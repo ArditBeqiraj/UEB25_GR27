@@ -43,6 +43,11 @@ $shitje = $conn->query("
         body {
             font-family: Arial, sans-serif;
             background: #f4f6f9;
+        }
+
+        .body-container {
+            font-family: Arial, sans-serif;
+            background: #f4f6f9;
             padding: 40px;
         }
 
@@ -76,70 +81,70 @@ $shitje = $conn->query("
 </head>
 
 <body>
+    <div class="body-container">
+        <h1>Mirësevini në Dashboardin Tuaj</h1>
 
-    <h1>Mirësevini në Dashboardin Tuaj</h1>
-
-    <h2>Aeroplanë të Marrë me Qira</h2>
-    <table>
-        <tr>
-            <th>Aeroplani</th>
-            <th>Data Fillimit</th>
-            <th>Data Përfundimit</th>
-        </tr>
-        <?php while ($row = $qira->fetch_assoc()): ?>
+        <h2>Aeroplanë të Marrë me Qira</h2>
+        <table>
             <tr>
-                <td><?= htmlspecialchars($row['airplane_name']) ?></td>
-                <td><?= $row['start_date'] ?></td>
-                <td><?= $row['end_date'] ?></td>
+                <th>Aeroplani</th>
+                <th>Data Fillimit</th>
+                <th>Data Përfundimit</th>
             </tr>
-        <?php endwhile; ?>
-    </table>
+            <?php while ($row = $qira->fetch_assoc()): ?>
+                <tr>
+                    <td><?= htmlspecialchars($row['airplane_name']) ?></td>
+                    <td><?= $row['start_date'] ?></td>
+                    <td><?= $row['end_date'] ?></td>
+                </tr>
+            <?php endwhile; ?>
+        </table>
 
-    <h2>Aeroplanë të Blerë</h2>
-    <table>
-        <tr>
-            <th>Aeroplani</th>
-            <th>Data e Kërkesës</th>
-            <th>Statusi</th>
-        </tr>
-        <?php while ($row = $blerje->fetch_assoc()): ?>
+        <h2>Aeroplanë të Blerë</h2>
+        <table>
             <tr>
-                <td><?= htmlspecialchars($row['airplane_name']) ?></td>
-                <td><?= $row['created_at'] ?></td>
-                <td><?= ucfirst($row['status']) ?></td>
+                <th>Aeroplani</th>
+                <th>Data e Kërkesës</th>
+                <th>Statusi</th>
             </tr>
-        <?php endwhile; ?>
-    </table>
+            <?php while ($row = $blerje->fetch_assoc()): ?>
+                <tr>
+                    <td><?= htmlspecialchars($row['airplane_name']) ?></td>
+                    <td><?= $row['created_at'] ?></td>
+                    <td><?= ucfirst($row['status']) ?></td>
+                </tr>
+            <?php endwhile; ?>
+        </table>
 
-    <h2>Kërkesa për Shitje të Dërguara</h2>
-    <table>
-        <tr>
-            <th>ID</th>
-            <th>Statusi</th>
-            <th>Data e Dërgimit</th>
-        </tr>
-        <?php while ($row = $shitje->fetch_assoc()): ?>
+        <h2>Kërkesa për Shitje të Dërguara</h2>
+        <table>
             <tr>
-                <td>#<?= $row['id'] ?></td>
-                <td><?= ucfirst($row['status']) ?></td>
-                <td><?= $row['created_at'] ?></td>
+                <th>ID</th>
+                <th>Statusi</th>
+                <th>Data e Dërgimit</th>
             </tr>
-        <?php endwhile; ?>
-    </table>
+            <?php while ($row = $shitje->fetch_assoc()): ?>
+                <tr>
+                    <td>#<?= $row['id'] ?></td>
+                    <td><?= ucfirst($row['status']) ?></td>
+                    <td><?= $row['created_at'] ?></td>
+                </tr>
+            <?php endwhile; ?>
+        </table>
 
-    <script>
-        function toggleNavOnScroll() {
-            const nav = document.querySelector('nav');
+        <script>
+            function toggleNavOnScroll() {
+                const nav = document.querySelector('nav');
 
-            window.addEventListener('DOMContentLoaded', () => {
+                window.addEventListener('DOMContentLoaded', () => {
 
-                nav.classList.add('scrolled');
-            });
-        }
+                    nav.classList.add('scrolled');
+                });
+            }
 
-        document.addEventListener('DOMContentLoaded', toggleNavOnScroll);
-    </script>
-
+            document.addEventListener('DOMContentLoaded', toggleNavOnScroll);
+        </script>
+    </div>
 </body>
 
 </html>
