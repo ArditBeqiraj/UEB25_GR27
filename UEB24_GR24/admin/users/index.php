@@ -1,12 +1,9 @@
- <?php
+<?php
 
 require "../db.php";
 
 $sql = "SELECT id, name, surname, email, role FROM users";
 $result = $conn->query($sql);
-
-
-
 
 ?>
 
@@ -53,6 +50,18 @@ $result = $conn->query($sql);
             background-color: #0056b3;
         }
 
+        .back-link {
+            display: inline-block;
+            margin-top: 30px;
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
         table {
             width: 100%;
             border-collapse: collapse;
@@ -92,19 +101,20 @@ $result = $conn->query($sql);
             background-color: #218838;
         }
 
-        a {
-            text-decoration: none;
-            color: white;
-        }
-
         .delete-btn:hover {
             background-color: #c82333;
+        }
+
+        .actions a {
+            text-decoration: none;
+            color: white;
         }
     </style>
 </head>
 
 <body>
     <div class="container">
+
         <h1>Menaxhimi i Përdoruesve</h1>
         <a href="./create.php" class="add-user-btn">+ Shto Përdorues</a>
 
@@ -121,35 +131,27 @@ $result = $conn->query($sql);
             <tbody>
                 <?php
                 if ($result->num_rows > 0) {
-                    //shkon ne qdo rresht te databazes dhe i shfaq ketu
                     while ($row = $result->fetch_assoc()) {
                         echo "<tr>";
                         echo "<td>" . htmlspecialchars($row['id']) . "</td>";
                         echo "<td>" . htmlspecialchars($row['name']) . " " . htmlspecialchars($row['surname']) . "</td>";
                         echo "<td>" . htmlspecialchars($row['email']) . "</td>";
                         echo "<td>" . htmlspecialchars($row['role']) . "</td>";
-
-                ?>
-
-                        <td class="actions">
-                            <button class="edit-btn">
-
-                                <a href="edit.php?id=<?= htmlspecialchars($row['id']); ?>">Edit</a>
-                            </button>
-                            <button class="delete-btn">
-                                <a href="delete.php?id=<?= htmlspecialchars($row['id']); ?>">Delete</a>
-                            </button>
-                        </td>
-                        </tr>
-                <?php
+                        echo '<td class="actions">
+                                <button class="edit-btn"><a href="edit.php?id=' . htmlspecialchars($row['id']) . '">Edit</a></button>
+                                <button class="delete-btn"><a href="delete.php?id=' . htmlspecialchars($row['id']) . '">Delete</a></button>
+                              </td>';
+                        echo "</tr>";
                     }
                 }
-
                 ?>
-
             </tbody>
         </table>
+
+        <!-- 🔁 Link për kthim -->
+        <a href="../dashboard.php" class="back-link">&larr; Kthehu në Dashboard</a>
+
     </div>
 </body>
 
-</html>  
+</html>

@@ -377,15 +377,7 @@ $flights = [
   </div>
 </section>
 
-<div id="footer"></div>
-
-<script type="text/javascript">
-  $('#footer').load('footer/footer.html');
-</script>
-
-<script type="text/javascript">
-  $('#popup').load('member/popup.html');
-</script>
+<?php include 'footer/footer.html'; ?>
 
 <script type="text/javascript" src="js/recources.js "></script>
 <script type="text/javascript" src="js/nav_footer.js"></script>

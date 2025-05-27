@@ -28,42 +28,6 @@ require_once 'partials/header.php';
     </div>
 </header>
 
-<div class="search-bar">
-    <h2>Find your Aircraft</h2>
-    <form method="post" action="index.php">
-        <div class="search">
-            <label for="query">Search</label>
-            <input
-                type="text"
-                name="query"
-                id="query"
-                style="max-height: fit-content; background-color: #f1f0e8"
-                autocomplete="off" />
-            <hr />
-        </div>
-        <select
-            name="category"
-            style="max-height: fit-content; background-color: #f1f0e8">
-            <option value="all">All Categories</option>
-            <option value="sale">For Sale</option>
-            <option value="rent">For Rent</option>
-            <option value="trade">For Trade</option>
-        </select>
-        <div class="slider">
-            <label for="slider" style="text-align: start">Price range: </label>
-            <span id="rangeValue" style="text-align: start">1000000</span>
-            <input
-                id="slider"
-                type="range"
-                min="0"
-                max="50000000"
-                value="1000000"
-                step="25000" />
-        </div>
-        <button type="submit" style="max-height: fit-content">Search</button>
-    </form>
-</div>
-
 <div class="showcase">
     <div class="imagecontainer">
         <a href="aircraft.php?id=learjet75">
@@ -81,7 +45,7 @@ require_once 'partials/header.php';
         <a href="aircraft.php?id=helicopter">
             <figure>
                 <img
-                    src="../img/plane-images/beechcraft 58/beechcraft.webp"
+                    src="../img/plane-images/beechcraft 58/beechcraft4.webp"
                     alt="beechcraft" />
                 <p>#N4380W</p>
                 <figcaption>1974 BEECHCRAFT 588</figcaption>
@@ -117,7 +81,7 @@ require_once 'partials/header.php';
         <div class="plane-types">
             <h1>Explore by type</h1>
             <div>
-                <a href="Sales/Jet.html">
+                <a href="">
                     <img
                         src="../img/planeTypes/businessjet-gulfstream190x132.png"
                         alt="Jet" />
@@ -125,21 +89,21 @@ require_once 'partials/header.php';
                 </a>
             </div>
             <div>
-                <a href="Sales/Single-engine.html">
+                <a href="">
                     <img src="../img/planeTypes/piston.svg" alt="SingleEngine" />
                     <h3>Single Engine</h3>
                 </a>
             </div>
             <div>
-                <a href="Sales/Multi engine.html">
+                <a href="">
                     <img src="../img/planeTypes/image.svg" alt="Multiengine" />
                     <h3>Multi-Engine</h3>
                 </a>
             </div>
             <div>
-                <a href="../Sales/Helicopter.html">
+                <a href="">
                     <img
-                        src="img/planeTypes/turbine_helcopter.svg"
+                        src="../img/planeTypes/turbine_helcopter.svg"
                         alt="Helicopter" />
                     <h3>Helicopter</h3>
                 </a>
@@ -151,9 +115,10 @@ require_once 'partials/header.php';
                 </a>
             </div>
             <div>
-                <a href=""></a>
-                <img src="../img/planeTypes/telebingo.png" alt="TurboProp" />
-                <h3>TurboProp</h3>
+                <a href="">
+                    <img src="../img/planeTypes/telebingo.png" alt="TurboProp" />
+                    <h3>TurboProp</h3>
+                </a>
             </div>
         </div>
     </section>
@@ -308,7 +273,7 @@ require_once 'partials/header.php';
             <td>
                 <a href="https://beechcraft.txtav.com/" target="_blank">
                     <figure>
-                        <img src="img/PopularBrands/beechcraft.svg" alt="beechcraft" />
+                        <img src="../img/PopularBrands/beechcraft.svg" alt="beechcraft" />
                     </figure>
                 </a>
             </td>

@@ -1,35 +1,41 @@
 <?php
 
+session_start();
 require '../admin/db.php';
 
-
-session_start();
-require '../admin/db.php'; // lidhja me databazën
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $email = $_POST['email'];
+    $email = mysqli_real_escape_string($conn, $_POST['email']);
     $password = $_POST['password'];
 
-    if (!empty($email) && !empty($password) && !is_numeric($email)) {
+    $query = "SELECT * FROM users WHERE email = '$email' LIMIT 1";
+    $result = mysqli_query($conn, $query);
 
-        //read from database
-        $query = "select * from users where email = '$email' limit 1";
-        $result = mysqli_query($conn, $query);
+    if ($result && mysqli_num_rows($result) > 0) {
+        $user = mysqli_fetch_assoc($result);
 
-        if ($result) {
-            if ($result && mysqli_num_rows($result) > 0) {
 
-                $user_data = mysqli_fetch_assoc($result);
+        if (password_verify($password, $user["password"])) {
 
-                if ($user_data['password'] === $password) {
+            $_SESSION["user_id"] = $user["id"];
+            $_SESSION["user_email"] = $user["email"];
+            $_SESSION["role"] = $user["role"];
+            $_SESSION["logged_in"] = true;
 
-                    $_SESSION['user_id'] = $user_data['user_id'];
-                }
+            if ($user["role"] == "admin") {
+                header("Location: ../admin/dashboard.php");
+            } else {
+                header("Location: ../client/index.php");
             }
+            exit();
+        } else {
+            $_SESSION["error"] = "Fjalëkalimi është i gabuar.";
+            header("Location: ../index.php");
+            exit();
         }
-        header("Location: ../admin/dashboard.php");
-        die;
     } else {
-        echo "wrong username or password!";
+        $_SESSION["error"] = "Përdoruesi me këtë email nuk ekziston.";
+        header("Location: ../index.php");
+        exit();
     }
 }
+?>
